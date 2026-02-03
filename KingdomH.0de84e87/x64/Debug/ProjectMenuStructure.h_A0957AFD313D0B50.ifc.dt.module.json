@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "KingdomH.0de84e87\\x64\\Debug\\ProjectMenuStructure.obj",
+            "outputs": [
+                "KingdomH.0de84e87\\x64\\Debug\\ProjectMenuStructure.h_A0957AFD313D0B50.ifc.dt.module.json",
+                "KingdomH.0de84e87\\x64\\Debug\\ProjectMenuStructure.h_A0957AFD313D0B50.ifc.dt.d.json",
+                "KingdomH.0de84e87\\x64\\Debug\\ProjectMenuStructure.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "C:\\Users\\Computer\\Downloads\\ShaderToggler-main\\src\\ProjectMenuStructure.h",
+                    "source-path": "c:\\users\\computer\\downloads\\shadertoggler-main\\src\\projectmenustructure.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}
