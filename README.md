@@ -8,7 +8,7 @@ This project is **not finished**, but I wanted to go ahead and release it in its
 
 ![Preview](https://i.gyazo.com/a3db285ac7b1525d2a531245bc14cf5b.png)
 
-## Menu Controlls 
+## Menu Controls
 Press f1 to open/close
 up and down arrow keys to scroll
 enter button to select options
