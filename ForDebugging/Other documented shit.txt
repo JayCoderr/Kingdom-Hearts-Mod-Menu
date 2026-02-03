@@ -1,0 +1,16 @@
+Other finds
+
+DestinyIsland Seashack: 
+Savepoint = "KINGDOM HEARTS FINAL MIX.exe"+2EAF8B4
+Savepoint
+0 - glitchy looking
+1 - default look
+Savepoint+7E = DrawIndex
+0 - draw behind savepoint
+1 - what save point?
+2 - draw behind savepoint
+3 - draw behind savepoint
+4 - draw behind savepoint
+5 - normal save point state aslong as save point is set to 1
+-------------------------------------------------------------------
+

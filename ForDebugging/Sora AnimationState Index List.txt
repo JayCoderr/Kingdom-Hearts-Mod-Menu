@@ -1,0 +1,121 @@
+EntityAnimationState index is 0-120 that i know of so far crash after 120
+
+0 - idle
+1 - idle weapon hold
+2 - walk
+3 - walk with a limp like a pimp
+4 - holding a weapon and walking
+5 - running
+6 - running with weapon
+7 - running with weapon on back
+8 - jumping or swiming like a squid
+9 - falling after jumping?
+10 - falling no flicker anim
+11 - landed on ground
+12 - roll
+13 - high jump
+14 - hanging from a ledge
+15 - swing hang from ledge
+16 - roll up into air
+17 - spin around into air
+18 - climb ladder
+19 - hop off ladder
+20 - hop on ladder
+21 - step down on ladder
+22 - climb up ladder
+23 - climb down ladder
+24 - climb left
+25 - climb right
+26 - jump up into air
+27 - climb tree
+28 - hop on to tree
+29 - slightly hop on and climb up tree
+30 - climb up tree
+31 - slide down tree fast
+32 - slide down tree slower
+33 - rotate right around tree
+34 - rotate left around tree
+35 - hop down off tree
+36 - idle on big tree
+37 - hop on too big tree
+38 - slightly hop on and climb up tree
+39 - climb up big tree
+40 - slide down fast on big tree
+41 - slide down slower on big tree
+42 - rotate right around big tree
+43 - rotate left around big tree
+44 - hop down from big tree
+45 - idle swim
+46 - normal swim
+47 - faster swim
+48 - dophin swim
+49 - jump into air
+50 - standing on ledge idle
+51 - go left on ledge
+52 - go right on ledge
+53 - tarzan slide on vine
+54 - sword swing 0 [looks like he wiggles it]
+55 - points sword for we fight you and me
+56 - throws potion into air with sword
+57 - shoot magic fire shot
+58 - throw potion into air using hand
+59 - throw potion at friend 
+60 - squeeze heart
+61 - black metal swing head
+62 - took a hit
+63 - took a hit
+64 - took a hit from behind
+65 - took a hit from front as we jumped away
+66 - pushed forward/fell forward?
+67 - taking a faster hit from the font
+68 - took a hit while swimming?
+69 - took a really hard hit?
+70 - took a big hit from the back
+71 - took a odd hit while falling?
+72 - hit immortal entity 0
+73 - hit immortal entity 1
+74 - hit something while in the air
+75 - peterpan fly mode
+76 - fast peterpan flymode/superman fly
+77 - right sideways peterpan flymode
+78 - leftside sideways peterpan flymode
+79 - hit something
+80 - fire magic shot while flying
+81 - magic potion with a sword while we fly
+82 - shot a magic shot
+83 - open a treasure chest
+84 - put entity on head
+85 - hold entity on head
+86 - put entity on head
+87 - put entity on head
+88 - walk forward with entity on head
+89 - throw entity down
+90 - throw entity away
+91 - push entity item spam
+92 - push entity forward
+93 - put entity forward initial
+94 - open door 1 hand
+95 - open door 2 hands
+96 - open door more agressively 2 hands
+97 - open door 1 handed
+98 - sowrd hit forward
+99 - full sword swing left to right
+100 - sword jab forward
+101 - backslash spin forward
+102 - slash down while in air
+103 - slash upwards while in air
+104 - spin slash attack 2
+105 - slash hit upwards while on ground
+106 - swing stand on blade then hit
+107 - spin flip attack
+108 - jump forward while backward slash
+109 - sping attack forward 3
+110 - block with sword
+111 - spin attack forward 4
+112 - sping attack 5
+113 - attack upwards into air
+114 - ground slam attack
+115 - hit immortal entity
+116 - blade spin then dash forward attack
+117 - roll forward
+118 - animation set end

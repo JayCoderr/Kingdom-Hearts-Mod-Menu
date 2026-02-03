@@ -1,0 +1,36 @@
+Area's can help if u need to map values per level or per map area
+
+drive to heartless:
+dh01
+dh02
+dh03
+dh05
+dh06
+
+destiny island
+di01
+di02
+di03
+di11
+
+traversal town:
+tw01
+tw02
+tw05
+tw06
+tw07
+tw08
+tw09
+tw10
+tw11
+tw14
+tw15
+tw16
+tw17
+tw18
+tw20
+tw21
+tw23
+tw24
+tw25
+tw26
