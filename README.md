@@ -6,8 +6,6 @@ Ay — this is a **Kingdom Hearts Steam mod menu written in C++**.
 
 This project is **not finished**, but I wanted to go ahead and release it in its current state so I can focus on other things and continue finishing features over time.                                            
 
-![Preview](https://www.youtube.com/watch?v=ZdQPRgRDn7o)
-
 ## Menu Controls
 Press f1 to open/close
 up and down arrow keys to scroll
