@@ -1,24 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Kingdom Hearts Modding Index</title>
-
 
 <style>
 
 /* ============================================================
    GLOBAL
-============================================================ */
+   ============================================================ */
 
 * {
     box-sizing: border-box;
@@ -26,29 +18,28 @@
 
 html {
     scroll-behavior: smooth;
+    min-height: 100%;
 }
 
 body {
-
     margin: 0;
+    min-height: 100vh;
 
-    color: #e7e9ee;
+    display: flex;
+    flex-direction: column;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
 
-    background: #080a0f;
+    background: #000000;
 }
 
 
 /* ============================================================
    YOUTUBE VIDEO BACKGROUND
-============================================================ */
+   ============================================================ */
 
 .youtube-background {
-
     position: fixed;
 
     top: 0;
@@ -64,9 +55,7 @@ body {
     pointer-events: none;
 }
 
-
 .youtube-background iframe {
-
     position: absolute;
 
     top: 50%;
@@ -78,8 +67,7 @@ body {
     min-width: 100vw;
     min-height: 56.25vw;
 
-    transform:
-        translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
     border: 0;
 
@@ -88,11 +76,10 @@ body {
 
 
 /* ============================================================
-   VIDEO DARK OVERLAY
-============================================================ */
+   VIDEO DARKENING
+   ============================================================ */
 
 .video-overlay {
-
     position: fixed;
 
     top: 0;
@@ -101,8 +88,12 @@ body {
     width: 100vw;
     height: 100vh;
 
-    background:
-        rgba(0, 0, 0, 0.58);
+    /*
+       Keep the video visible, but make the interface
+       predominantly black.
+    */
+
+    background: rgba(0, 0, 0, 0.68);
 
     z-index: -5;
 
@@ -112,41 +103,30 @@ body {
 
 /* ============================================================
    HEADER
-============================================================ */
+   ============================================================ */
 
 .site-header {
+    background: rgba(0, 0, 0, 0.88);
 
-    background:
-        rgba(13, 16, 23, 0.78);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.12);
-
-    backdrop-filter:
-        blur(5px);
+    backdrop-filter: blur(5px);
 }
 
-
 .header-inner {
-
     max-width: 1200px;
 
     margin: auto;
 
-    padding:
-        30px 25px 25px;
+    padding: 30px 25px 25px;
 
     display: flex;
 
-    justify-content:
-        space-between;
-
+    justify-content: space-between;
     align-items: center;
 }
 
-
 .site-title h1 {
-
     margin: 0;
 
     font-size: 30px;
@@ -156,9 +136,7 @@ body {
     font-weight: 700;
 }
 
-
 .site-title span {
-
     display: block;
 
     margin-top: 6px;
@@ -167,31 +145,26 @@ body {
 
     letter-spacing: 4px;
 
-    color: #b8bec9;
+    color: #aaaaaa;
 }
 
-
 .header-subtitle {
-
     font-size: 11px;
 
     letter-spacing: 2px;
 
-    color: #a3aab6;
+    color: #999999;
 }
 
 
 /* ============================================================
-   NAVIGATION TABS
-============================================================ */
+   NAVIGATION
+   ============================================================ */
 
 .tab-navigation {
+    background: rgba(0, 0, 0, 0.92);
 
-    background:
-        rgba(11, 14, 20, 0.86);
-
-    border-bottom:
-        1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
     display: flex;
 
@@ -199,21 +172,17 @@ body {
 
     overflow-x: auto;
 
-    backdrop-filter:
-        blur(5px);
+    backdrop-filter: blur(5px);
 }
 
-
 .tab-button {
-
     border: 0;
 
     background: transparent;
 
-    color: #a0a8b5;
+    color: #888888;
 
-    padding:
-        17px 20px;
+    padding: 17px 20px;
 
     font-size: 12px;
 
@@ -223,8 +192,7 @@ body {
 
     cursor: pointer;
 
-    border-bottom:
-        2px solid transparent;
+    border-bottom: 2px solid transparent;
 
     transition:
         color 0.2s,
@@ -232,90 +200,76 @@ body {
         border-color 0.2s;
 }
 
-
 .tab-button:hover {
-
-    background:
-        rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.04);
 
     color: #ffffff;
 }
 
-
 .tab-button.active {
-
     color: #ffffff;
 
-    background:
-        rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.06);
 
-    border-bottom-color:
-        #ffffff;
+    border-bottom-color: #ffffff;
 }
 
 
 /* ============================================================
-   MAIN CONTENT
-============================================================ */
+   MAIN
+   ============================================================ */
 
 .content-container {
+    width: 100%;
 
     max-width: 1200px;
 
     min-height: 600px;
 
-    margin: auto;
+    margin: 0 auto;
 
-    padding:
-        50px 25px;
+    padding: 50px 25px;
+
+    flex: 1;
 }
 
 
 /* ============================================================
-   TAB CONTENT
-============================================================ */
+   TABS
+   ============================================================ */
 
 .tab-content {
-
     display: none;
 
-    animation:
-        fadeIn 0.2s ease;
+    animation: fadeIn 0.2s ease;
 }
-
 
 .tab-content.active {
-
     display: block;
 }
-
 
 @keyframes fadeIn {
 
     from {
-
         opacity: 0;
 
-        transform:
-            translateY(5px);
+        transform: translateY(5px);
     }
 
     to {
-
         opacity: 1;
 
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
+
 }
 
 
 /* ============================================================
    HEADINGS
-============================================================ */
+   ============================================================ */
 
 h2 {
-
     margin-top: 0;
 
     font-size: 30px;
@@ -323,65 +277,53 @@ h2 {
     letter-spacing: 2px;
 }
 
-
 .section-description {
-
-    color: #c0c6d0;
+    color: #aaaaaa;
 
     margin-bottom: 30px;
 }
 
 
 /* ============================================================
-   HOME HERO
-============================================================ */
+   HERO
+   ============================================================ */
 
 .hero {
-
     padding: 45px;
 
     margin-bottom: 35px;
 
-    background:
-        rgba(14, 18, 26, 0.78);
+    background: rgba(0, 0, 0, 0.82);
 
-    border:
-        1px solid rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.14);
 
     border-radius: 8px;
 
-    backdrop-filter:
-        blur(6px);
+    backdrop-filter: blur(6px);
 
     box-shadow:
-        0 15px 40px
-        rgba(0, 0, 0, 0.25);
+        0 15px 40px rgba(0, 0, 0, 0.45);
 }
 
-
 .hero h2 {
-
     margin-bottom: 15px;
 }
 
-
 .hero p {
-
     max-width: 750px;
 
     line-height: 1.7;
 
-    color: #c3c9d3;
+    color: #bbbbbb;
 }
 
 
 /* ============================================================
    CARDS
-============================================================ */
+   ============================================================ */
 
 .info-grid,
 .list-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -393,15 +335,11 @@ h2 {
     gap: 18px;
 }
 
-
 .info-card,
 .list-card {
+    background: rgba(0, 0, 0, 0.82);
 
-    background:
-        rgba(14, 18, 25, 0.78);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
     border-radius: 6px;
 
@@ -412,28 +350,21 @@ h2 {
         border-color 0.2s,
         background 0.2s;
 
-    backdrop-filter:
-        blur(5px);
+    backdrop-filter: blur(5px);
 }
-
 
 .info-card:hover,
 .list-card:hover {
+    transform: translateY(-2px);
 
-    transform:
-        translateY(-2px);
-
-    background:
-        rgba(17, 22, 31, 0.88);
+    background: rgba(0, 0, 0, 0.90);
 
     border-color:
         rgba(255, 255, 255, 0.25);
 }
 
-
 .info-card h3,
 .list-card h3 {
-
     margin-top: 0;
 
     margin-bottom: 10px;
@@ -441,13 +372,11 @@ h2 {
     font-size: 17px;
 }
 
-
 .info-card p,
 .list-card p {
-
     margin-bottom: 0;
 
-    color: #b6bdc8;
+    color: #aaaaaa;
 
     line-height: 1.6;
 
@@ -457,34 +386,26 @@ h2 {
 
 /* ============================================================
    PLACEHOLDER
-============================================================ */
+   ============================================================ */
 
 .placeholder-panel {
+    background: rgba(0, 0, 0, 0.82);
 
-    background:
-        rgba(14, 18, 25, 0.78);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
     border-radius: 6px;
 
     padding: 30px;
 
-    backdrop-filter:
-        blur(5px);
+    backdrop-filter: blur(5px);
 }
 
-
 .placeholder-panel h3 {
-
     margin-top: 0;
 }
 
-
 .placeholder-panel p {
-
-    color: #b6bdc8;
+    color: #aaaaaa;
 
     line-height: 1.7;
 }
@@ -492,93 +413,72 @@ h2 {
 
 /* ============================================================
    FOOTER
-============================================================ */
+   ============================================================ */
 
 .site-footer {
+    width: 100%;
+
+    margin-top: auto;
 
     text-align: center;
 
-    padding:
-        35px 20px;
+    padding: 35px 20px;
 
     border-top:
         1px solid rgba(255, 255, 255, 0.12);
 
-    background:
-        rgba(8, 10, 15, 0.82);
+    background: rgba(0, 0, 0, 0.92);
 
-    color: #a2a9b4;
+    color: #999999;
 
-    backdrop-filter:
-        blur(5px);
+    backdrop-filter: blur(5px);
 }
 
-
 .site-footer p {
-
     margin: 5px;
 }
 
-
 .footer-small {
-
     font-size: 11px;
 
     letter-spacing: 2px;
 
-    color: #777f8c;
+    color: #666666;
 }
 
 
 /* ============================================================
    MOBILE
-============================================================ */
+   ============================================================ */
 
 @media (max-width: 700px) {
 
     .header-inner {
+        flex-direction: column;
 
-        flex-direction:
-            column;
-
-        align-items:
-            flex-start;
+        align-items: flex-start;
 
         gap: 15px;
     }
 
-
     .header-subtitle {
-
         display: none;
     }
 
-
     .tab-navigation {
-
-        justify-content:
-            flex-start;
+        justify-content: flex-start;
     }
-
 
     .tab-button {
-
-        padding:
-            15px;
+        padding: 15px;
     }
-
 
     .content-container {
-
-        padding:
-            30px 15px;
+        padding: 30px 15px;
     }
 
-
     .hero {
-
-        padding:
-            25px;
+        padding: 25px;
     }
 
 }
@@ -587,41 +487,30 @@ h2 {
 
 </head>
 
-
 <body>
 
 
 <!-- ============================================================
      YOUTUBE BACKGROUND
-============================================================ -->
+     ============================================================ -->
 
 <div class="youtube-background">
 
     <iframe
-
         src="https://www.youtube.com/embed/OTvXAz1JokM?autoplay=1&mute=1&loop=1&playlist=OTvXAz1JokM&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1"
-
         title="Kingdom Hearts Background"
-
         allow="autoplay; encrypted-media"
-
-        frameborder="0"
-
-    ></iframe>
+        frameborder="0">
+    </iframe>
 
 </div>
-
-
-<!-- ============================================================
-     DARK OVERLAY
-============================================================ -->
 
 <div class="video-overlay"></div>
 
 
 <!-- ============================================================
      HEADER
-============================================================ -->
+     ============================================================ -->
 
 <header class="site-header">
 
@@ -629,16 +518,13 @@ h2 {
 
         <div class="site-title">
 
-            <h1>
-                KINGDOM HEARTS
-            </h1>
+            <h1>KINGDOM HEARTS</h1>
 
             <span>
                 MODDING INDEX
             </span>
 
         </div>
-
 
         <div class="header-subtitle">
 
@@ -652,64 +538,65 @@ h2 {
 
 
 <!-- ============================================================
-     TAB NAVIGATION
-============================================================ -->
+     NAVIGATION
+     ============================================================ -->
 
 <nav class="tab-navigation">
 
     <button
         class="tab-button active"
-        data-tab="home"
-    >
+        data-tab="home">
+
         HOME
-    </button>
 
+    </button>
 
     <button
         class="tab-button"
-        data-tab="characters"
-    >
+        data-tab="characters">
+
         CHARACTERS
-    </button>
 
+    </button>
 
     <button
         class="tab-button"
-        data-tab="worlds"
-    >
+        data-tab="worlds">
+
         WORLDS
-    </button>
 
+    </button>
 
     <button
         class="tab-button"
-        data-tab="assets"
-    >
+        data-tab="assets">
+
         ASSETS
-    </button>
 
+    </button>
 
     <button
         class="tab-button"
-        data-tab="variables"
-    >
+        data-tab="variables">
+
         VARIABLES
-    </button>
 
+    </button>
 
     <button
         class="tab-button"
-        data-tab="tools"
-    >
+        data-tab="tools">
+
         TOOLS
-    </button>
 
+    </button>
 
     <button
         class="tab-button"
-        data-tab="tutorials"
-    >
+        data-tab="tutorials">
+
         TUTORIALS
+
     </button>
 
 </nav>
@@ -717,26 +604,24 @@ h2 {
 
 <!-- ============================================================
      MAIN CONTENT
-============================================================ -->
+     ============================================================ -->
 
 <main class="content-container">
 
 
 <!-- ============================================================
      HOME
-============================================================ -->
+     ============================================================ -->
 
 <section
     id="home"
-    class="tab-content active"
->
+    class="tab-content active">
 
     <div class="hero">
 
         <h2>
             Kingdom Hearts Modding Index
         </h2>
-
 
         <p>
 
@@ -750,7 +635,6 @@ h2 {
 
 
     <div class="info-grid">
-
 
         <div class="info-card">
 
@@ -792,8 +676,8 @@ h2 {
 
             <p>
 
-                BIN, HED, PKG, DDS, WPN, DAT,
-                MDLX and other game assets.
+                BIN, HED, PKG, DDS, WPN,
+                DAT, MDLX and other game assets.
 
             </p>
 
@@ -815,7 +699,6 @@ h2 {
 
         </div>
 
-
     </div>
 
 </section>
@@ -823,17 +706,15 @@ h2 {
 
 <!-- ============================================================
      CHARACTERS
-============================================================ -->
+     ============================================================ -->
 
 <section
     id="characters"
-    class="tab-content"
->
+    class="tab-content">
 
     <h2>
         Characters
     </h2>
-
 
     <p class="section-description">
 
@@ -845,84 +726,35 @@ h2 {
 
     <div class="list-grid">
 
-
         <div class="list-card">
-
-            <h3>
-                Sora
-            </h3>
-
-            <p>
-                Player character.
-            </p>
-
+            <h3>Sora</h3>
+            <p>Player character.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                Donald
-            </h3>
-
-            <p>
-                Donald Duck character data.
-            </p>
-
+            <h3>Donald</h3>
+            <p>Donald Duck character data.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                Goofy
-            </h3>
-
-            <p>
-                Goofy character data.
-            </p>
-
+            <h3>Goofy</h3>
+            <p>Goofy character data.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                Kairi
-            </h3>
-
-            <p>
-                Kairi character data.
-            </p>
-
+            <h3>Kairi</h3>
+            <p>Kairi character data.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                Riku
-            </h3>
-
-            <p>
-                Riku character data.
-            </p>
-
+            <h3>Riku</h3>
+            <p>Riku character data.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                Ansem
-            </h3>
-
-            <p>
-                Ansem-related character data.
-            </p>
-
+            <h3>Ansem</h3>
+            <p>Ansem-related character data.</p>
         </div>
-
 
     </div>
 
@@ -931,17 +763,15 @@ h2 {
 
 <!-- ============================================================
      WORLDS
-============================================================ -->
+     ============================================================ -->
 
 <section
     id="worlds"
-    class="tab-content"
->
+    class="tab-content">
 
     <h2>
         Worlds
     </h2>
-
 
     <p class="section-description">
 
@@ -952,78 +782,65 @@ h2 {
 
     <div class="list-grid">
 
-
         <div class="list-card">
             <h3>Destiny Islands</h3>
             <p>Starting world.</p>
         </div>
-
 
         <div class="list-card">
             <h3>Traverse Town</h3>
             <p>Central hub world.</p>
         </div>
 
-
         <div class="list-card">
             <h3>Wonderland</h3>
             <p>Alice in Wonderland world.</p>
         </div>
-
 
         <div class="list-card">
             <h3>Olympus Coliseum</h3>
             <p>Hercules world.</p>
         </div>
 
-
         <div class="list-card">
             <h3>Deep Jungle</h3>
             <p>Tarzan world.</p>
         </div>
-
 
         <div class="list-card">
             <h3>Agrabah</h3>
             <p>Aladdin world.</p>
         </div>
 
-
         <div class="list-card">
             <h3>Monstro</h3>
             <p>Pinocchio world.</p>
         </div>
-
 
         <div class="list-card">
             <h3>Atlantica</h3>
             <p>The Little Mermaid world.</p>
         </div>
 
-
         <div class="list-card">
             <h3>Halloween Town</h3>
             <p>The Nightmare Before Christmas world.</p>
         </div>
-
 
         <div class="list-card">
             <h3>Neverland</h3>
             <p>Peter Pan world.</p>
         </div>
 
-
         <div class="list-card">
             <h3>Hollow Bastion</h3>
             <p>Major story world.</p>
         </div>
 
-
         <div class="list-card">
             <h3>End of the World</h3>
             <p>Final world.</p>
         </div>
-
 
     </div>
 
@@ -1032,132 +849,64 @@ h2 {
 
 <!-- ============================================================
      ASSETS
-============================================================ -->
+     ============================================================ -->
 
 <section
     id="assets"
-    class="tab-content"
->
+    class="tab-content">
 
     <h2>
         Assets
     </h2>
 
-
     <p class="section-description">
 
-        Kingdom Hearts file formats and
-        asset research.
+        Kingdom Hearts file formats and asset research.
 
     </p>
 
 
     <div class="list-grid">
 
-
         <div class="list-card">
-
-            <h3>
-                .BIN
-            </h3>
-
-            <p>
-                Binary game data and containers.
-            </p>
-
+            <h3>.BIN</h3>
+            <p>Binary game data and containers.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                .HED
-            </h3>
-
-            <p>
-                Archive/header information.
-            </p>
-
+            <h3>.HED</h3>
+            <p>Archive/header information.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                .PKG
-            </h3>
-
-            <p>
-                Package data.
-            </p>
-
+            <h3>.PKG</h3>
+            <p>Package data.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                .WPN
-            </h3>
-
-            <p>
-                Weapon-related assets.
-            </p>
-
+            <h3>.WPN</h3>
+            <p>Weapon-related assets.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                .DAT
-            </h3>
-
-            <p>
-                Game data files.
-            </p>
-
+            <h3>.DAT</h3>
+            <p>Game data files.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                .DDS
-            </h3>
-
-            <p>
-                Texture assets.
-            </p>
-
+            <h3>.DDS</h3>
+            <p>Texture assets.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                .MDLX
-            </h3>
-
-            <p>
-                Model-related assets.
-            </p>
-
+            <h3>.MDLX</h3>
+            <p>Model-related assets.</p>
         </div>
 
-
         <div class="list-card">
-
-            <h3>
-                .MSET
-            </h3>
-
-            <p>
-                Motion and animation data.
-            </p>
-
+            <h3>.MSET</h3>
+            <p>Motion and animation data.</p>
         </div>
-
 
     </div>
 
@@ -1166,17 +915,15 @@ h2 {
 
 <!-- ============================================================
      VARIABLES
-============================================================ -->
+     ============================================================ -->
 
 <section
     id="variables"
-    class="tab-content"
->
+    class="tab-content">
 
     <h2>
         Variables
     </h2>
-
 
     <p class="section-description">
 
@@ -1191,7 +938,6 @@ h2 {
         <h3>
             Variable Database
         </h3>
-
 
         <p>
 
@@ -1209,17 +955,15 @@ h2 {
 
 <!-- ============================================================
      TOOLS
-============================================================ -->
+     ============================================================ -->
 
 <section
     id="tools"
-    class="tab-content"
->
+    class="tab-content">
 
     <h2>
         Tools
     </h2>
-
 
     <p class="section-description">
 
@@ -1230,7 +974,6 @@ h2 {
 
 
     <div class="list-grid">
-
 
         <div class="list-card">
 
@@ -1270,7 +1013,6 @@ h2 {
 
         </div>
 
-
     </div>
 
 </section>
@@ -1278,17 +1020,15 @@ h2 {
 
 <!-- ============================================================
      TUTORIALS
-============================================================ -->
+     ============================================================ -->
 
 <section
     id="tutorials"
-    class="tab-content"
->
+    class="tab-content">
 
     <h2>
         Tutorials
     </h2>
-
 
     <p class="section-description">
 
@@ -1303,7 +1043,6 @@ h2 {
         <h3>
             Coming Soon
         </h3>
-
 
         <p>
 
@@ -1323,14 +1062,13 @@ h2 {
 
 <!-- ============================================================
      FOOTER
-============================================================ -->
+     ============================================================ -->
 
 <footer class="site-footer">
 
     <p>
         Kingdom Hearts Modding Index
     </p>
-
 
     <p class="footer-small">
 
@@ -1342,8 +1080,8 @@ h2 {
 
 
 <!-- ============================================================
-     JAVASCRIPT
-============================================================ -->
+     TAB JAVASCRIPT
+     ============================================================ -->
 
 <script>
 
@@ -1352,7 +1090,6 @@ const tabButtons =
         ".tab-button"
     );
 
-
 const tabContents =
     document.querySelectorAll(
         ".tab-content"
@@ -1360,10 +1097,6 @@ const tabContents =
 
 
 function showTab(tabName) {
-
-    /*
-     * Hide all tab content
-     */
 
     tabContents.forEach(
         function(content) {
@@ -1376,11 +1109,6 @@ function showTab(tabName) {
     );
 
 
-    /*
-     * Remove active state
-     * from all buttons
-     */
-
     tabButtons.forEach(
         function(button) {
 
@@ -1391,10 +1119,6 @@ function showTab(tabName) {
         }
     );
 
-
-    /*
-     * Show selected tab
-     */
 
     const selectedContent =
         document.getElementById(
@@ -1411,10 +1135,6 @@ function showTab(tabName) {
     }
 
 
-    /*
-     * Activate selected button
-     */
-
     const selectedButton =
         document.querySelector(
             `.tab-button[data-tab="${tabName}"]`
@@ -1430,14 +1150,6 @@ function showTab(tabName) {
     }
 
 
-    /*
-     * Update URL hash
-     *
-     * Example:
-     *
-     * index.html#characters
-     */
-
     history.replaceState(
         null,
         "",
@@ -1446,10 +1158,6 @@ function showTab(tabName) {
 
 }
 
-
-/*
- * Tab button events
- */
 
 tabButtons.forEach(
     function(button) {
@@ -1469,10 +1177,6 @@ tabButtons.forEach(
     }
 );
 
-
-/*
- * Load tab from URL
- */
 
 const startingTab =
     window.location.hash.substring(1);
@@ -1496,5 +1200,4 @@ else {
 
 
 </body>
-
 </html>
