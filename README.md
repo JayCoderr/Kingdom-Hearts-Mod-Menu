@@ -1,12 +1,12 @@
 # Kingdom Hearts Steam Mod Menu (C++)
 
-![Preview](https://i.gyazo.com/610608e0f3a31b055372d8e288a8d37e.jpg)
+![Preview](https://www.youtube.com/watch?v=OTvXAz1JokM)
 
 Ay — this is a **Kingdom Hearts Steam mod menu written in C++**.
 
 This project is **not finished**, but I wanted to go ahead and release it in its current state so I can focus on other things and continue finishing features over time.                                            
 
-![Preview](https://i.gyazo.com/a3db285ac7b1525d2a531245bc14cf5b.png)
+![Preview](https://www.youtube.com/watch?v=ZdQPRgRDn7o)
 
 ## Menu Controls
 Press f1 to open/close
