@@ -840,7 +840,7 @@ ID LIST
 
     <iframe
         id="kh-background-video"
-        src="https://www.youtube.com/embed/4ABUjSCL_bA?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&enablejsapi=1"
+        src="https://www.youtube.com/embed/4ABUjSCL_bA?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&enablejsapi=1&origin=https%3A%2F%2Fjaycoderr.github.io"
         title="Kingdom Hearts Background"
         allow="autoplay; encrypted-media"
         frameborder="0">
@@ -2875,74 +2875,144 @@ ID LIST
 </script>
 <script>
     // ============================================================
-    // KINGDOM HEARTS BACKGROUND VIDEOS
+    // KINGDOM HEARTS BACKGROUND VIDEO LIST
     // ============================================================
 
     const backgroundVideoIDs = [
         "4ABUjSCL_bA",
 
-        // Add more YouTube IDs here:
+        // Add more IDs here:
         // "VIDEO_ID_2",
         // "VIDEO_ID_3",
         // "VIDEO_ID_4"
     ];
 
-    let backgroundPlayer;
+    let backgroundPlayer = null;
     let currentBackgroundVideo = 0;
+    let backgroundAudioEnabled = false;
+
 
     // ============================================================
     // LOAD YOUTUBE IFRAME API
     // ============================================================
 
-    const youtubeScript = document.createElement("script");
-    youtubeScript.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(youtubeScript);
+    if (!window.YT) {
+
+        const youtubeScript = document.createElement("script");
+
+        youtubeScript.src =
+            "https://www.youtube.com/iframe_api";
+
+        document.head.appendChild(youtubeScript);
+    }
+
 
     // ============================================================
-    // CREATE PLAYER
+    // YOUTUBE API READY
     // ============================================================
 
     function onYouTubeIframeAPIReady() {
 
-        backgroundPlayer = new YT.Player("kh-background-video", {
+        backgroundPlayer = new YT.Player(
+            "kh-background-video",
+            {
 
-            events: {
+                events: {
 
-                onReady: function(event) {
+                    // ------------------------------------------------
+                    // PLAYER READY
+                    // ------------------------------------------------
 
-                    // Start at 50% volume
-                    event.target.setVolume(50);
+                    onReady: function(event) {
 
-                    // Unmute after setting volume
-                    event.target.unMute();
+                        // Keep autoplay muted.
+                        event.target.mute();
 
-                    // Make sure the video starts playing
-                    event.target.playVideo();
-                },
+                        // Set desired volume.
+                        event.target.setVolume(50);
 
-                onStateChange: function(event) {
+                        // Start playback.
+                        event.target.playVideo();
+                    },
 
-                    // When the current video finishes
-                    if (event.data === YT.PlayerState.ENDED) {
 
-                        currentBackgroundVideo++;
+                    // ------------------------------------------------
+                    // VIDEO STATE CHANGED
+                    // ------------------------------------------------
 
-                        // Start over when we reach the end
-                        if (currentBackgroundVideo >= backgroundVideoIDs.length) {
-                            currentBackgroundVideo = 0;
+                    onStateChange: function(event) {
+
+                        if (
+                            event.data ===
+                            YT.PlayerState.ENDED
+                        ) {
+
+                            currentBackgroundVideo++;
+
+                            if (
+                                currentBackgroundVideo >=
+                                backgroundVideoIDs.length
+                            ) {
+
+                                currentBackgroundVideo = 0;
+                            }
+
+                            backgroundPlayer.loadVideoById(
+                                backgroundVideoIDs[
+                                    currentBackgroundVideo
+                                ]
+                            );
                         }
-
-                        backgroundPlayer.loadVideoById(
-                            backgroundVideoIDs[currentBackgroundVideo]
-                        );
                     }
+
                 }
 
             }
-
-        });
-
+        );
     }
+
+
+    // ============================================================
+    // ENABLE AUDIO AFTER USER INTERACTION
+    // ============================================================
+
+    function enableBackgroundAudio() {
+
+        if (
+            backgroundAudioEnabled ||
+            !backgroundPlayer
+        ) {
+            return;
+        }
+
+        backgroundAudioEnabled = true;
+
+        backgroundPlayer.setVolume(50);
+        backgroundPlayer.unMute();
+    }
+
+
+    // ============================================================
+    // FIRST USER INTERACTION
+    // ============================================================
+
+    document.addEventListener(
+        "click",
+        enableBackgroundAudio,
+        { once: true }
+    );
+
+    document.addEventListener(
+        "keydown",
+        enableBackgroundAudio,
+        { once: true }
+    );
+
+    document.addEventListener(
+        "touchstart",
+        enableBackgroundAudio,
+        { once: true }
+    );
 </script>
 </body>
 
