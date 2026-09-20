@@ -2,13 +2,489 @@
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 ```
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
 <title>Kingdom Hearts Modding Index</title>
 
-<link rel="stylesheet" href="style.css">
+
+<!-- ========================================================
+     ALL CSS IS EMBEDDED HERE
+========================================================= -->
+
+<style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    body {
+        margin: 0;
+
+        background: #080a0f;
+
+        color: #e7e9ee;
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+    }
+
+
+    /* ====================================================
+       HEADER
+    ==================================================== */
+
+    .site-header {
+
+        background: #0d1017;
+
+        border-bottom:
+            1px solid #252b36;
+    }
+
+
+    .header-inner {
+
+        max-width: 1200px;
+
+        margin: auto;
+
+        padding:
+            30px 25px 25px;
+
+        display: flex;
+
+        justify-content:
+            space-between;
+
+        align-items: center;
+    }
+
+
+    .site-title h1 {
+
+        margin: 0;
+
+        font-size: 30px;
+
+        letter-spacing: 5px;
+
+        font-weight: 700;
+    }
+
+
+    .site-title span {
+
+        display: block;
+
+        margin-top: 6px;
+
+        font-size: 12px;
+
+        letter-spacing: 4px;
+
+        color: #8d96a5;
+    }
+
+
+    .header-subtitle {
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+
+        color: #697180;
+    }
+
+
+    /* ====================================================
+       NAVIGATION
+    ==================================================== */
+
+    .tab-navigation {
+
+        background: #0b0e14;
+
+        border-bottom:
+            1px solid #252b36;
+
+        display: flex;
+
+        justify-content: center;
+
+        overflow-x: auto;
+    }
+
+
+    .tab-button {
+
+        border: 0;
+
+        background: transparent;
+
+        color: #8992a1;
+
+        padding:
+            17px 20px;
+
+        font-size: 12px;
+
+        font-weight: 700;
+
+        letter-spacing: 1px;
+
+        cursor: pointer;
+
+        border-bottom:
+            2px solid transparent;
+
+        transition:
+            color 0.2s,
+            background 0.2s,
+            border-color 0.2s;
+    }
+
+
+    .tab-button:hover {
+
+        background: #11151d;
+
+        color: #ffffff;
+    }
+
+
+    .tab-button.active {
+
+        color: #ffffff;
+
+        background: #121720;
+
+        border-bottom-color:
+            #ffffff;
+    }
+
+
+    /* ====================================================
+       MAIN CONTENT
+    ==================================================== */
+
+    .content-container {
+
+        max-width: 1200px;
+
+        min-height: 600px;
+
+        margin: auto;
+
+        padding:
+            50px 25px;
+    }
+
+
+    /* ====================================================
+       TAB CONTENT
+    ==================================================== */
+
+    .tab-content {
+
+        display: none;
+
+        animation:
+            fadeIn 0.2s ease;
+    }
+
+
+    .tab-content.active {
+
+        display: block;
+    }
+
+
+    @keyframes fadeIn {
+
+        from {
+
+            opacity: 0;
+
+            transform:
+                translateY(5px);
+        }
+
+        to {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+    }
+
+
+    /* ====================================================
+       HEADINGS
+    ==================================================== */
+
+    h2 {
+
+        margin-top: 0;
+
+        font-size: 30px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .section-description {
+
+        color: #8d96a5;
+
+        margin-bottom: 30px;
+    }
+
+
+    /* ====================================================
+       HOME HERO
+    ==================================================== */
+
+    .hero {
+
+        padding: 45px;
+
+        margin-bottom: 35px;
+
+        background: #0e121a;
+
+        border:
+            1px solid #252b36;
+
+        border-radius: 8px;
+    }
+
+
+    .hero h2 {
+
+        margin-bottom: 15px;
+    }
+
+
+    .hero p {
+
+        max-width: 750px;
+
+        line-height: 1.7;
+
+        color: #9ca5b4;
+    }
+
+
+    /* ====================================================
+       CARDS
+    ==================================================== */
+
+    .info-grid,
+    .list-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+
+        gap: 18px;
+    }
+
+
+    .info-card,
+    .list-card {
+
+        background: #0e1219;
+
+        border:
+            1px solid #252b36;
+
+        border-radius: 6px;
+
+        padding: 25px;
+
+        transition:
+            transform 0.2s,
+            border-color 0.2s,
+            background 0.2s;
+    }
+
+
+    .info-card:hover,
+    .list-card:hover {
+
+        transform:
+            translateY(-2px);
+
+        background: #11161f;
+
+        border-color:
+            #3a4351;
+    }
+
+
+    .info-card h3,
+    .list-card h3 {
+
+        margin-top: 0;
+
+        margin-bottom: 10px;
+
+        font-size: 17px;
+    }
+
+
+    .info-card p,
+    .list-card p {
+
+        margin-bottom: 0;
+
+        color: #8d96a5;
+
+        line-height: 1.6;
+
+        font-size: 14px;
+    }
+
+
+    /* ====================================================
+       PLACEHOLDER
+    ==================================================== */
+
+    .placeholder-panel {
+
+        background: #0e1219;
+
+        border:
+            1px solid #252b36;
+
+        border-radius: 6px;
+
+        padding: 30px;
+    }
+
+
+    .placeholder-panel h3 {
+
+        margin-top: 0;
+    }
+
+
+    .placeholder-panel p {
+
+        color: #8d96a5;
+
+        line-height: 1.7;
+    }
+
+
+    /* ====================================================
+       FOOTER
+    ==================================================== */
+
+    .site-footer {
+
+        text-align: center;
+
+        padding: 35px 20px;
+
+        border-top:
+            1px solid #252b36;
+
+        background: #080a0f;
+
+        color: #7f8794;
+    }
+
+
+    .site-footer p {
+
+        margin: 5px;
+    }
+
+
+    .footer-small {
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+
+        color: #555d69;
+    }
+
+
+    /* ====================================================
+       MOBILE
+    ==================================================== */
+
+    @media (max-width: 700px) {
+
+        .header-inner {
+
+            flex-direction: column;
+
+            align-items: flex-start;
+
+            gap: 15px;
+        }
+
+
+        .header-subtitle {
+
+            display: none;
+        }
+
+
+        .tab-navigation {
+
+            justify-content:
+                flex-start;
+        }
+
+
+        .tab-button {
+
+            padding:
+                15px;
+        }
+
+
+        .content-container {
+
+            padding:
+                30px 15px;
+        }
+
+
+        .hero {
+
+            padding:
+                25px;
+        }
+
+    }
+
+</style>
 ```
 
 </head>
@@ -16,21 +492,29 @@
 <body>
 
 ```
-<!-- =========================================================
+<!-- ========================================================
      HEADER
-========================================================== -->
+========================================================= -->
 
 <header class="site-header">
 
     <div class="header-inner">
 
         <div class="site-title">
+
             <h1>KINGDOM HEARTS</h1>
-            <span>MODDING INDEX</span>
+
+            <span>
+                MODDING INDEX
+            </span>
+
         </div>
 
+
         <div class="header-subtitle">
-            <span>KHPC • KH1 • KH2 • REFERENCE DATABASE</span>
+
+            KHPC • KH1 • KH2 • REFERENCE DATABASE
+
         </div>
 
     </div>
@@ -38,316 +522,493 @@
 </header>
 
 
-<!-- =========================================================
-     NAVIGATION TABS
-========================================================== -->
+<!-- ========================================================
+     TAB NAVIGATION
+========================================================= -->
 
 <nav class="tab-navigation">
 
-    <button class="tab-button active" data-tab="home">
+    <button
+        class="tab-button active"
+        data-tab="home"
+    >
         HOME
     </button>
 
-    <button class="tab-button" data-tab="characters">
+
+    <button
+        class="tab-button"
+        data-tab="characters"
+    >
         CHARACTERS
     </button>
 
-    <button class="tab-button" data-tab="worlds">
+
+    <button
+        class="tab-button"
+        data-tab="worlds"
+    >
         WORLDS
     </button>
 
-    <button class="tab-button" data-tab="assets">
+
+    <button
+        class="tab-button"
+        data-tab="assets"
+    >
         ASSETS
     </button>
 
-    <button class="tab-button" data-tab="variables">
+
+    <button
+        class="tab-button"
+        data-tab="variables"
+    >
         VARIABLES
     </button>
 
-    <button class="tab-button" data-tab="tools">
+
+    <button
+        class="tab-button"
+        data-tab="tools"
+    >
         TOOLS
     </button>
 
-    <button class="tab-button" data-tab="tutorials">
+
+    <button
+        class="tab-button"
+        data-tab="tutorials"
+    >
         TUTORIALS
     </button>
 
 </nav>
 
 
-<!-- =========================================================
+<!-- ========================================================
      MAIN CONTENT
-========================================================== -->
+========================================================= -->
 
 <main class="content-container">
 
 
-    <!-- =====================================================
+    <!-- ====================================================
          HOME
-    ====================================================== -->
+    ===================================================== -->
 
-    <section id="home" class="tab-content active">
+    <section
+        id="home"
+        class="tab-content active"
+    >
 
         <div class="hero">
 
-            <h2>Kingdom Hearts Modding Index</h2>
+            <h2>
+                Kingdom Hearts Modding Index
+            </h2>
+
 
             <p>
-                A community reference for Kingdom Hearts modding,
-                game data, characters, worlds, assets, variables,
-                tools and research.
+                A reference database for Kingdom Hearts
+                modding, game data, characters, worlds,
+                assets, variables, tools and research.
             </p>
 
         </div>
 
+
         <div class="info-grid">
 
+
             <div class="info-card">
-                <h3>Characters</h3>
+
+                <h3>
+                    Characters
+                </h3>
+
                 <p>
                     Character names, internal identifiers,
                     models, animations and related data.
                 </p>
+
             </div>
 
-            <div class="info-card">
-                <h3>Worlds</h3>
-                <p>
-                    Kingdom Hearts worlds and their associated
-                    files, areas and internal names.
-                </p>
-            </div>
 
             <div class="info-card">
-                <h3>Assets</h3>
+
+                <h3>
+                    Worlds
+                </h3>
+
                 <p>
-                    Information about BIN, HED, PKG, DDS,
-                    WPN, DAT and other game assets.
+                    Kingdom Hearts worlds, areas and
+                    internal identifiers.
                 </p>
+
             </div>
 
+
             <div class="info-card">
-                <h3>Variables</h3>
+
+                <h3>
+                    Assets
+                </h3>
+
                 <p>
-                    Known game variables, character values,
-                    flags and internal identifiers.
+                    BIN, HED, PKG, DDS, WPN, DAT,
+                    MDLX and other game assets.
                 </p>
+
             </div>
+
+
+            <div class="info-card">
+
+                <h3>
+                    Variables
+                </h3>
+
+                <p>
+                    Known game variables, flags and
+                    internal identifiers.
+                </p>
+
+            </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- =====================================================
+    <!-- ====================================================
          CHARACTERS
-    ====================================================== -->
+    ===================================================== -->
 
-    <section id="characters" class="tab-content">
+    <section
+        id="characters"
+        class="tab-content"
+    >
 
-        <h2>Characters</h2>
+        <h2>
+            Characters
+        </h2>
+
 
         <p class="section-description">
-            Kingdom Hearts character information and internal
-            game references.
+
+            Kingdom Hearts character information and
+            internal game references.
+
         </p>
+
 
         <div class="list-grid">
 
+
             <div class="list-card">
+
                 <h3>Sora</h3>
-                <p>Player character and primary protagonist.</p>
+
+                <p>
+                    Player character.
+                </p>
+
             </div>
 
+
             <div class="list-card">
+
                 <h3>Donald</h3>
-                <p>Donald Duck character data.</p>
+
+                <p>
+                    Donald Duck character data.
+                </p>
+
             </div>
 
+
             <div class="list-card">
+
                 <h3>Goofy</h3>
-                <p>Goofy character data.</p>
+
+                <p>
+                    Goofy character data.
+                </p>
+
             </div>
 
+
             <div class="list-card">
+
                 <h3>Kairi</h3>
-                <p>Kairi character data.</p>
+
+                <p>
+                    Kairi character data.
+                </p>
+
             </div>
 
+
             <div class="list-card">
+
                 <h3>Riku</h3>
-                <p>Riku character data.</p>
+
+                <p>
+                    Riku character data.
+                </p>
+
             </div>
 
+
             <div class="list-card">
+
                 <h3>Ansem</h3>
-                <p>Ansem-related character data.</p>
+
+                <p>
+                    Ansem-related character data.
+                </p>
+
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- =====================================================
+    <!-- ====================================================
          WORLDS
-    ====================================================== -->
+    ===================================================== -->
 
-    <section id="worlds" class="tab-content">
+    <section
+        id="worlds"
+        class="tab-content"
+    >
 
-        <h2>Worlds</h2>
+        <h2>
+            Worlds
+        </h2>
+
 
         <p class="section-description">
+
             Kingdom Hearts worlds and area information.
+
         </p>
 
+
         <div class="list-grid">
+
 
             <div class="list-card">
                 <h3>Destiny Islands</h3>
                 <p>Starting world.</p>
             </div>
 
+
             <div class="list-card">
                 <h3>Traverse Town</h3>
                 <p>Central hub world.</p>
             </div>
+
 
             <div class="list-card">
                 <h3>Wonderland</h3>
                 <p>Alice in Wonderland world.</p>
             </div>
 
+
             <div class="list-card">
                 <h3>Olympus Coliseum</h3>
                 <p>Hercules world.</p>
             </div>
+
 
             <div class="list-card">
                 <h3>Deep Jungle</h3>
                 <p>Tarzan world.</p>
             </div>
 
+
             <div class="list-card">
                 <h3>Agrabah</h3>
                 <p>Aladdin world.</p>
             </div>
+
 
             <div class="list-card">
                 <h3>Monstro</h3>
                 <p>Pinocchio world.</p>
             </div>
 
+
             <div class="list-card">
                 <h3>Atlantica</h3>
                 <p>The Little Mermaid world.</p>
             </div>
+
 
             <div class="list-card">
                 <h3>Halloween Town</h3>
                 <p>The Nightmare Before Christmas world.</p>
             </div>
 
+
             <div class="list-card">
                 <h3>Neverland</h3>
                 <p>Peter Pan world.</p>
             </div>
+
 
             <div class="list-card">
                 <h3>Hollow Bastion</h3>
                 <p>Major story world.</p>
             </div>
 
+
             <div class="list-card">
                 <h3>End of the World</h3>
                 <p>Final world.</p>
             </div>
 
+
         </div>
 
     </section>
 
 
-    <!-- =====================================================
+    <!-- ====================================================
          ASSETS
-    ====================================================== -->
+    ===================================================== -->
 
-    <section id="assets" class="tab-content">
+    <section
+        id="assets"
+        class="tab-content"
+    >
 
-        <h2>Assets</h2>
+        <h2>
+            Assets
+        </h2>
+
 
         <p class="section-description">
-            File formats and asset research.
+
+            Kingdom Hearts file formats and
+            asset research.
+
         </p>
+
 
         <div class="list-grid">
 
+
             <div class="list-card">
                 <h3>.BIN</h3>
-                <p>Binary game data and containers.</p>
+                <p>
+                    Binary game data and containers.
+                </p>
             </div>
+
 
             <div class="list-card">
                 <h3>.HED</h3>
-                <p>Archive/header information.</p>
+                <p>
+                    Archive/header information.
+                </p>
             </div>
+
 
             <div class="list-card">
                 <h3>.PKG</h3>
-                <p>Package data.</p>
+                <p>
+                    Package data.
+                </p>
             </div>
+
 
             <div class="list-card">
                 <h3>.WPN</h3>
-                <p>Weapon-related assets.</p>
+                <p>
+                    Weapon-related assets.
+                </p>
             </div>
+
 
             <div class="list-card">
                 <h3>.DAT</h3>
-                <p>Game data files.</p>
+                <p>
+                    Game data files.
+                </p>
             </div>
+
 
             <div class="list-card">
                 <h3>.DDS</h3>
-                <p>Texture assets.</p>
+                <p>
+                    Texture assets.
+                </p>
             </div>
+
 
             <div class="list-card">
                 <h3>.MDLX</h3>
-                <p>Model-related assets.</p>
+                <p>
+                    Model-related assets.
+                </p>
             </div>
+
 
             <div class="list-card">
                 <h3>.MSET</h3>
-                <p>Motion and animation data.</p>
+                <p>
+                    Motion and animation data.
+                </p>
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- =====================================================
+    <!-- ====================================================
          VARIABLES
-    ====================================================== -->
+    ===================================================== -->
 
-    <section id="variables" class="tab-content">
+    <section
+        id="variables"
+        class="tab-content"
+    >
 
-        <h2>Variables</h2>
+        <h2>
+            Variables
+        </h2>
+
 
         <p class="section-description">
+
             Known Kingdom Hearts internal variables,
             identifiers and flags.
+
         </p>
+
 
         <div class="placeholder-panel">
 
-            <h3>Variable Database</h3>
+            <h3>
+                Variable Database
+            </h3>
+
 
             <p>
-                This section will contain documented variables,
-                character identifiers, world identifiers,
-                flags and other internal game values.
+
+                This section will contain documented
+                variables, character identifiers,
+                world identifiers, flags and other
+                internal game values.
+
             </p>
 
         </div>
@@ -355,65 +1016,110 @@
     </section>
 
 
-    <!-- =====================================================
+    <!-- ====================================================
          TOOLS
-    ====================================================== -->
+    ===================================================== -->
 
-    <section id="tools" class="tab-content">
+    <section
+        id="tools"
+        class="tab-content"
+    >
 
-        <h2>Tools</h2>
+        <h2>
+            Tools
+        </h2>
+
 
         <p class="section-description">
-            Tools useful for Kingdom Hearts research and modding.
+
+            Tools useful for Kingdom Hearts research
+            and modding.
+
         </p>
+
 
         <div class="list-grid">
 
+
             <div class="list-card">
-                <h3>Asset Extractor</h3>
+
+                <h3>
+                    Asset Extractor
+                </h3>
+
                 <p>
                     Extract and inspect game assets.
                 </p>
+
             </div>
 
+
             <div class="list-card">
-                <h3>Asset Viewer</h3>
+
+                <h3>
+                    Asset Viewer
+                </h3>
+
                 <p>
                     View supported game resources.
                 </p>
+
             </div>
 
+
             <div class="list-card">
-                <h3>Mod Menu</h3>
+
+                <h3>
+                    Mod Menu
+                </h3>
+
                 <p>
                     Runtime modding and debugging tools.
                 </p>
+
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- =====================================================
+    <!-- ====================================================
          TUTORIALS
-    ====================================================== -->
+    ===================================================== -->
 
-    <section id="tutorials" class="tab-content">
+    <section
+        id="tutorials"
+        class="tab-content"
+    >
 
-        <h2>Tutorials</h2>
+        <h2>
+            Tutorials
+        </h2>
+
 
         <p class="section-description">
-            Kingdom Hearts modding tutorials and technical notes.
+
+            Kingdom Hearts modding tutorials and
+            technical notes.
+
         </p>
+
 
         <div class="placeholder-panel">
 
-            <h3>Coming Soon</h3>
+            <h3>
+                Coming Soon
+            </h3>
+
 
             <p>
-                Tutorials for extracting, modifying and rebuilding
-                Kingdom Hearts assets will be added here.
+
+                Tutorials for extracting, modifying
+                and rebuilding Kingdom Hearts assets
+                will be added here.
+
             </p>
 
         </div>
@@ -424,9 +1130,9 @@
 </main>
 
 
-<!-- =========================================================
+<!-- ========================================================
      FOOTER
-========================================================== -->
+========================================================= -->
 
 <footer class="site-footer">
 
@@ -435,13 +1141,165 @@
     </p>
 
     <p class="footer-small">
-        Research • Documentation • Modding
+        RESEARCH • DOCUMENTATION • MODDING
     </p>
 
 </footer>
 
 
-<script src="script.js"></script>
+<!-- ========================================================
+     ALL JAVASCRIPT IS EMBEDDED HERE
+========================================================= -->
+
+<script>
+
+    const tabButtons =
+        document.querySelectorAll(
+            ".tab-button"
+        );
+
+
+    const tabContents =
+        document.querySelectorAll(
+            ".tab-content"
+        );
+
+
+    function showTab(tabName) {
+
+        /*
+         * Hide every tab
+         */
+
+        tabContents.forEach(
+            function(content) {
+
+                content.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+        /*
+         * Remove active state
+         * from every button
+         */
+
+        tabButtons.forEach(
+            function(button) {
+
+                button.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+        /*
+         * Find selected content
+         */
+
+        const selectedContent =
+            document.getElementById(
+                tabName
+            );
+
+
+        if (selectedContent) {
+
+            selectedContent.classList.add(
+                "active"
+            );
+
+        }
+
+
+        /*
+         * Find selected button
+         */
+
+        const selectedButton =
+            document.querySelector(
+                `.tab-button[data-tab="${tabName}"]`
+            );
+
+
+        if (selectedButton) {
+
+            selectedButton.classList.add(
+                "active"
+            );
+
+        }
+
+
+        /*
+         * Change URL hash
+         *
+         * Example:
+         *
+         * index.html#characters
+         */
+
+        history.replaceState(
+            null,
+            "",
+            "#" + tabName
+        );
+
+    }
+
+
+    /*
+     * Button click events
+     */
+
+    tabButtons.forEach(
+        function(button) {
+
+            button.addEventListener(
+                "click",
+                function() {
+
+                    const tabName =
+                        button.dataset.tab;
+
+                    showTab(tabName);
+
+                }
+            );
+
+        }
+    );
+
+
+    /*
+     * Open the tab specified
+     * in the URL.
+     */
+
+    const startingTab =
+        window.location.hash.substring(1);
+
+
+    if (
+        startingTab &&
+        document.getElementById(startingTab)
+    ) {
+
+        showTab(startingTab);
+
+    }
+    else {
+
+        showTab("home");
+
+    }
+
+</script>
 ```
 
 </body>
