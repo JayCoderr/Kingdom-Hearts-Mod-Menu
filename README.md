@@ -1,6 +1,6 @@
 # Kingdom Hearts Steam Mod Menu (C++)
 
-![Preview]([https://www.youtube.com/watch?v=OTvXAz1JokM](https://github.com/JayCoderr/video-shit/blob/main/2026-09-13%2013-09-29.mp4))
+https://www.youtube.com/watch?v=OTvXAz1JokM](https://github.com/JayCoderr/video-shit/blob/main/2026-09-13%2013-09-29.mp4
 
 Ay — this is a **Kingdom Hearts Steam mod menu written in C++**.
 
