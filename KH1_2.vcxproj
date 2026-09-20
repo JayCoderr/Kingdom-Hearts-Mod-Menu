@@ -30,26 +30,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -81,7 +81,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <TargetExt>.addon64</TargetExt>
-    <IncludePath>$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Jaycoder\Desktop\TheXFilesBackOnline\libs\zlib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Jaycoder\Desktop\TheXFilesBackOnline\KingdomHearts\KH1_2_Remix\lib;C:\Users\jayco\Desktop\Kingdom Hearts\KINGDOM HEARTS -HD 1.5+2.5 ReMIX-\lib;C:\Users\Jaycoder\Desktop\TheXFilesBackOnline\libs\zlib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -130,15 +131,15 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Jaycoder\Desktop\TheXFilesBackOnline\libs\zlib\lib;$(SolutionDir)Include;C:\Users\Jaycoder\Desktop\TheXFilesBackOnline\KingdomHearts\KH1_2_Remix\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp23</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalLibraryDirectories>C:\Users\Computer\Downloads\ShaderToggler-main\src\Include\MinHook\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>MinHook.x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Jaycoder\Desktop\zlib;C:\Users\Jaycoder\Desktop\TheXFilesBackOnline\KingdomHearts\KH1_2_Remix\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>C:/Users/Jaycoder/Desktop/TheXFilesBackOnline/KingdomHearts/KH1_2_Remix/lib/libMinHook.x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -166,8 +167,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EmbeddedAssetExtractor.cpp" />
+    <ClCompile Include="HedReader.cpp" />
+    <ClCompile Include="miniz.cpp" />
+    <ClCompile Include="PkgReader.cpp" />
     <ClCompile Include="ProjectMain.cpp" />
     <ClCompile Include="ProjectMenuStructure.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EmbeddedAssetExtractor.h" />
+    <ClInclude Include="HedReader.h" />
+    <ClInclude Include="miniz.h" />
+    <ClInclude Include="PkgReader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,6 @@
+{
+    "builtin-baseline": "just testing shit",
+    "dependencies": [
+        "zlib"
+    ]
+}
