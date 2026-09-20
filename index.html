@@ -839,7 +839,8 @@ ID LIST
 <div class="youtube-background">
 
     <iframe
-        src="https://www.youtube.com/embed/OTvXAz1JokM?autoplay=1&mute=1&loop=1&playlist=OTvXAz1JokM&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1"
+        id="kh-background-video"
+        src="https://www.youtube.com/embed/4ABUjSCL_bA?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&enablejsapi=1"
         title="Kingdom Hearts Background"
         allow="autoplay; encrypted-media"
         frameborder="0">
@@ -2871,6 +2872,77 @@ ID LIST
 
     }
 
+</script>
+<script>
+    // ============================================================
+    // KINGDOM HEARTS BACKGROUND VIDEOS
+    // ============================================================
+
+    const backgroundVideoIDs = [
+        "4ABUjSCL_bA",
+
+        // Add more YouTube IDs here:
+        // "VIDEO_ID_2",
+        // "VIDEO_ID_3",
+        // "VIDEO_ID_4"
+    ];
+
+    let backgroundPlayer;
+    let currentBackgroundVideo = 0;
+
+    // ============================================================
+    // LOAD YOUTUBE IFRAME API
+    // ============================================================
+
+    const youtubeScript = document.createElement("script");
+    youtubeScript.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(youtubeScript);
+
+    // ============================================================
+    // CREATE PLAYER
+    // ============================================================
+
+    function onYouTubeIframeAPIReady() {
+
+        backgroundPlayer = new YT.Player("kh-background-video", {
+
+            events: {
+
+                onReady: function(event) {
+
+                    // Start at 50% volume
+                    event.target.setVolume(50);
+
+                    // Unmute after setting volume
+                    event.target.unMute();
+
+                    // Make sure the video starts playing
+                    event.target.playVideo();
+                },
+
+                onStateChange: function(event) {
+
+                    // When the current video finishes
+                    if (event.data === YT.PlayerState.ENDED) {
+
+                        currentBackgroundVideo++;
+
+                        // Start over when we reach the end
+                        if (currentBackgroundVideo >= backgroundVideoIDs.length) {
+                            currentBackgroundVideo = 0;
+                        }
+
+                        backgroundPlayer.loadVideoById(
+                            backgroundVideoIDs[currentBackgroundVideo]
+                        );
+                    }
+                }
+
+            }
+
+        });
+
+    }
 </script>
 </body>
 
