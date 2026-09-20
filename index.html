@@ -835,7 +835,6 @@ ID LIST
 <!-- ============================================================
      YOUTUBE BACKGROUND
      ============================================================ -->
-
 <div class="youtube-background">
 
     <iframe
@@ -847,6 +846,18 @@ ID LIST
     </iframe>
 
 </div>
+
+
+<!-- ============================================================
+     INVISIBLE BACKGROUND AUDIO
+     ============================================================ -->
+
+<audio
+    id="kh-background-audio"
+    src="https://files.catbox.moe/305ifa.mp3"
+    loop
+    preload="auto">
+</audio>
 
 
 <div class="video-overlay"></div>
@@ -2874,145 +2885,74 @@ ID LIST
 
 </script>
 <script>
-    // ============================================================
-    // KINGDOM HEARTS BACKGROUND VIDEO LIST
-    // ============================================================
 
-    const backgroundVideoIDs = [
-        "4ABUjSCL_bA",
-
-        // Add more IDs here:
-        // "VIDEO_ID_2",
-        // "VIDEO_ID_3",
-        // "VIDEO_ID_4"
-    ];
-
-    let backgroundPlayer = null;
-    let currentBackgroundVideo = 0;
-    let backgroundAudioEnabled = false;
+    const backgroundAudio =
+        document.getElementById("kh-background-audio");
 
 
-    // ============================================================
-    // LOAD YOUTUBE IFRAME API
-    // ============================================================
+    // ------------------------------------------------------------
+    // START AUDIO
+    // ------------------------------------------------------------
 
-    if (!window.YT) {
+    function startBackgroundAudio() {
 
-        const youtubeScript = document.createElement("script");
+        backgroundAudio.volume = 0.5;
 
-        youtubeScript.src =
-            "https://www.youtube.com/iframe_api";
+        backgroundAudio.play().catch(() => {
+            // Browser blocked autoplay.
+            // It will be started by the first user interaction.
+        });
 
-        document.head.appendChild(youtubeScript);
     }
 
 
-    // ============================================================
-    // YOUTUBE API READY
-    // ============================================================
-
-    function onYouTubeIframeAPIReady() {
-
-        backgroundPlayer = new YT.Player(
-            "kh-background-video",
-            {
-
-                events: {
-
-                    // ------------------------------------------------
-                    // PLAYER READY
-                    // ------------------------------------------------
-
-                    onReady: function(event) {
-
-                        // Keep autoplay muted.
-                        event.target.mute();
-
-                        // Set desired volume.
-                        event.target.setVolume(50);
-
-                        // Start playback.
-                        event.target.playVideo();
-                    },
+    // Try immediately.
+    startBackgroundAudio();
 
 
-                    // ------------------------------------------------
-                    // VIDEO STATE CHANGED
-                    // ------------------------------------------------
-
-                    onStateChange: function(event) {
-
-                        if (
-                            event.data ===
-                            YT.PlayerState.ENDED
-                        ) {
-
-                            currentBackgroundVideo++;
-
-                            if (
-                                currentBackgroundVideo >=
-                                backgroundVideoIDs.length
-                            ) {
-
-                                currentBackgroundVideo = 0;
-                            }
-
-                            backgroundPlayer.loadVideoById(
-                                backgroundVideoIDs[
-                                    currentBackgroundVideo
-                                ]
-                            );
-                        }
-                    }
-
-                }
-
-            }
-        );
-    }
-
-
-    // ============================================================
-    // ENABLE AUDIO AFTER USER INTERACTION
-    // ============================================================
+    // ------------------------------------------------------------
+    // FALLBACK FOR BROWSER AUTOPLAY BLOCKING
+    // ------------------------------------------------------------
 
     function enableBackgroundAudio() {
 
-        if (
-            backgroundAudioEnabled ||
-            !backgroundPlayer
-        ) {
-            return;
-        }
+        backgroundAudio.volume = 0.5;
 
-        backgroundAudioEnabled = true;
+        backgroundAudio.play().catch(() => {});
 
-        backgroundPlayer.setVolume(50);
-        backgroundPlayer.unMute();
+        document.removeEventListener(
+            "click",
+            enableBackgroundAudio
+        );
+
+        document.removeEventListener(
+            "keydown",
+            enableBackgroundAudio
+        );
+
+        document.removeEventListener(
+            "touchstart",
+            enableBackgroundAudio
+        );
+
     }
 
 
-    // ============================================================
-    // FIRST USER INTERACTION
-    // ============================================================
-
     document.addEventListener(
         "click",
-        enableBackgroundAudio,
-        { once: true }
+        enableBackgroundAudio
     );
 
     document.addEventListener(
         "keydown",
-        enableBackgroundAudio,
-        { once: true }
+        enableBackgroundAudio
     );
 
     document.addEventListener(
         "touchstart",
-        enableBackgroundAudio,
-        { once: true }
+        enableBackgroundAudio
     );
+
 </script>
 </body>
 
