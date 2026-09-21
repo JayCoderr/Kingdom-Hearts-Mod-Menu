@@ -825,6 +825,199 @@ ID LIST
     height: auto;
     border: none;
 }
+/* ============================================================
+   CHARACTER ID PROFILES
+   ============================================================ */
+
+.character-id-profiles {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 35px;
+
+    margin-top: 25px;
+    padding: 10px 0 25px 0;
+
+}
+
+
+/* ============================================================
+   INDIVIDUAL PROFILE
+   ============================================================ */
+
+.character-id-profile {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 150px;
+
+    text-align: center;
+
+}
+
+
+/* ============================================================
+   CIRCULAR PROFILE IMAGE
+   ============================================================ */
+
+.character-id-image {
+
+    width: 120px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 2px solid rgba(255, 255, 255, 0.15);
+
+    background: #000000;
+
+    box-shadow:
+        0px 8px 25px rgba(0, 0, 0, 0.75);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.character-id-image:hover {
+
+    transform: scale(1.08);
+
+    border-color: rgba(255, 255, 255, 0.45);
+
+    box-shadow:
+        0px 10px 30px rgba(0, 0, 0, 0.9);
+
+}
+
+
+/* ============================================================
+   PROFILE IMAGE
+   ============================================================ */
+
+.character-id-image img {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border: none;
+
+}
+
+
+/* ============================================================
+   PROFILE TITLE
+   ============================================================ */
+
+.character-id-profile strong {
+
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #ffffff;
+
+}
+
+
+/* ============================================================
+   PROFILE DESCRIPTION
+   ============================================================ */
+
+.character-id-profile span {
+
+    margin-top: 5px;
+
+    font-size: 11px;
+
+    color: #888888;
+
+}
+
+
+/* ============================================================
+   MAIN CHARACTER IMAGE
+   ============================================================ */
+
+.character-main-image {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+    background: #000000;
+
+    border: none;
+
+    box-shadow:
+        0px 10px 31px rgba(0, 0, 0, 1);
+
+}
+
+
+.character-main-image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    border: none;
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .character-id-profiles {
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+    }
+
+    .character-id-profile {
+
+        width: 110px;
+
+    }
+
+    .character-id-image {
+
+        width: 90px;
+        height: 90px;
+
+    }
+
+}
 </style>
 
 </head>
@@ -1213,28 +1406,94 @@ ID LIST
 			
 			
 				<!-- =============================================
-					CHARACTER DATA
+					CHARACTER ID PROFILES
 					============================================= -->
 			
-				<div class="character-data">
+				<div class="character-id-profiles">
 			
-					<div>
+					<!-- SORA ID 1 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="https://iili.io/nTsqTHx.gif"
+								alt="Sora">
+			
+						</div>
 			
 						<strong>
-							Character Default ID
+							Character ID 1
 						</strong>
 			
 						<span>
-							TBD
+							Sora
 						</span>
 			
 					</div>
 			
 			
-					<div>
+					<!-- SORA ID 2 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="https://iili.io/nTsaJUl.gif"
+								alt="Halloween Sora">
+			
+						</div>
 			
 						<strong>
-							Character Default Weapon ID
+							Character ID 2
+						</strong>
+			
+						<span>
+							Halloween Sora
+						</span>
+			
+					</div>
+			
+			
+					<!-- SORA ID 3 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="https://iili.io/nTsa9ff.gif"
+								alt="Aquatic Sora">
+			
+						</div>
+			
+						<strong>
+							Character ID 3
+						</strong>
+			
+						<span>
+							Aquatic Sora
+						</span>
+			
+					</div>
+			
+			
+					<!-- DEFAULT WEAPON ID -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="https://iili.io/nTsqTHx.gif"
+								alt="Sora Default Weapon">
+			
+						</div>
+			
+						<strong>
+							Default Weapon ID
 						</strong>
 			
 						<span>
@@ -1247,135 +1506,20 @@ ID LIST
 			
 			
 				<!-- =============================================
-					STATIC ADDRESSES
+					MAIN CHARACTER IMAGE
 					============================================= -->
-				
-				<details class="research-spoiler">
-				
-					<summary>
-						Known Static MDLS / MDLX &amp; MSET Addresses
-					</summary>
-				
-					<div class="research-spoiler-content">
-				
-						<p class="research-note">
-				
-							Known and/or researched static memory addresses
-							associated with this character. Addresses may
-							change depending on the current level, world,
-							area or loaded game state.
-				
-						</p>
-				
-				
-						<!-- =============================================
-							MDLS / MDLX ADDRESSES
-							============================================= -->
-				
-						<h4>
-							MDLS / MDLX Addresses
-						</h4>
-				
-						<div class="id-list">
-				
-							<div>
-				
-								<span class="id-value">
-									TBD
-								</span>
-				
-								<span class="id-description">
-									Level / Area — Unknown
-								</span>
-				
-							</div>
-				
-				
-							<div>
-				
-								<span class="id-value">
-									TBD
-								</span>
-				
-								<span class="id-description">
-									Level / Area — Unknown
-								</span>
-				
-							</div>
-				
-				
-							<div>
-				
-								<span class="id-value">
-									TBD
-								</span>
-				
-								<span class="id-description">
-									Level / Area — Unknown
-								</span>
-				
-							</div>
-				
-						</div>
-				
-				
-						<!-- =============================================
-							MSET ADDRESSES
-							============================================= -->
-				
-						<h4 style="margin-top: 24px;">
-							MSET Addresses
-						</h4>
-				
-						<div class="id-list">
-				
-							<div>
-				
-								<span class="id-value">
-									TBD
-								</span>
-				
-								<span class="id-description">
-									Level / Area — Unknown
-								</span>
-				
-							</div>
-				
-				
-							<div>
-				
-								<span class="id-value">
-									TBD
-								</span>
-				
-								<span class="id-description">
-									Level / Area — Unknown
-								</span>
-				
-							</div>
-				
-				
-							<div>
-				
-								<span class="id-value">
-									TBD
-								</span>
-				
-								<span class="id-description">
-									Level / Area — Unknown
-								</span>
-				
-							</div>
-				
-						</div>
-				
-					</div>
-				
-				</details>
+			
+				<div class="character-main-image">
+			
+					<img
+						src="https://iili.io/nTsqTHx.gif"
+						alt="Sora">
+			
+				</div>
 			
 			
 				<!-- =============================================
-					ANIMATION STATE IDS
+					ANIMATION STATE ID LIST
 					============================================= -->
 			
 				<details class="research-spoiler">
@@ -1389,13 +1533,11 @@ ID LIST
 						<p class="research-note">
 			
 							Known and/or researched animation state
-							identifiers associated with Sora. Values may
-							vary between game versions and should be
-							treated as research data until independently
-							verified.
+							IDs associated with Sora. Values may vary
+							depending on the current game state,
+							animation set or loaded character data.
 			
 						</p>
-			
 			
 						<div class="id-list">
 			
@@ -1406,11 +1548,10 @@ ID LIST
 								</span>
 			
 								<span class="id-description">
-									Unknown / Not Yet Documented
+									Unknown animation state
 								</span>
 			
 							</div>
-			
 			
 							<div>
 			
@@ -1419,11 +1560,10 @@ ID LIST
 								</span>
 			
 								<span class="id-description">
-									Unknown / Not Yet Documented
+									Unknown animation state
 								</span>
 			
 							</div>
-			
 			
 							<div>
 			
@@ -1432,7 +1572,7 @@ ID LIST
 								</span>
 			
 								<span class="id-description">
-									Unknown / Not Yet Documented
+									Unknown animation state
 								</span>
 			
 							</div>
@@ -1445,7 +1585,7 @@ ID LIST
 			
 			
 				<!-- =============================================
-					ENTITY PLAYER STATE IDS
+					ENTITY PLAYER STATE ID LIST
 					============================================= -->
 			
 				<details class="research-spoiler">
@@ -1458,14 +1598,12 @@ ID LIST
 			
 						<p class="research-note">
 			
-							Known and/or researched entity player state
-							identifiers associated with Sora. These
-							values document internal gameplay states
-							discovered through reverse engineering,
-							memory research and hands-on testing.
+							Known and/or researched entity player
+							state IDs associated with Sora. Values
+							may vary depending on the current level,
+							area or loaded gameplay state.
 			
 						</p>
-			
 			
 						<div class="id-list">
 			
@@ -1476,11 +1614,10 @@ ID LIST
 								</span>
 			
 								<span class="id-description">
-									Unknown / Not Yet Documented
+									Unknown player state
 								</span>
 			
 							</div>
-			
 			
 							<div>
 			
@@ -1489,11 +1626,10 @@ ID LIST
 								</span>
 			
 								<span class="id-description">
-									Unknown / Not Yet Documented
+									Unknown player state
 								</span>
 			
 							</div>
-			
 			
 							<div>
 			
@@ -1502,7 +1638,258 @@ ID LIST
 								</span>
 			
 								<span class="id-description">
-									Unknown / Not Yet Documented
+									Unknown player state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+			</div>
+	
+			<!-- =================================================
+				DONALD
+				================================================= -->
+			
+			<div class="character-entry">
+			
+				<h3>
+					Donald
+				</h3>
+			
+				<p>
+			
+					Donald Duck is one of Sora's primary party
+					members. His character data includes party
+					behavior, animations, magic-related systems
+					and other gameplay resources.
+			
+				</p>
+			
+			
+				<!-- =============================================
+					CHARACTER ID PROFILES
+					============================================= -->
+
+				<div class="character-id-profiles">
+
+					<!-- DONALD ID 1 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="https://iili.io/nTsYEN9.gif"
+								alt="Donald">
+
+						</div>
+
+						<strong>
+							Character ID 1
+						</strong>
+
+						<span>
+							Donald
+						</span>
+
+					</div>
+
+
+					<!-- DONALD ID 2 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="https://iili.io/nTsY09S.gif"
+								alt="Aquatic Donald">
+
+						</div>
+
+						<strong>
+							Character ID 2
+						</strong>
+
+						<span>
+							TBD
+						</span>
+
+					</div>
+
+
+					<!-- DONALD ID 3 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="https://iili.io/nTsYmVs.gif"
+								alt="Halloween Donald">
+
+						</div>
+
+						<strong>
+							Character ID 3
+						</strong>
+
+						<span>
+							TBD
+						</span>
+
+					</div>
+
+
+					<!-- DEFAULT WEAPON ID -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="https://iili.io/nTsYEN9.gif"
+								alt="Donald Default Weapon">
+
+						</div>
+
+						<strong>
+							Default Weapon ID
+						</strong>
+
+						<span>
+							TBD
+						</span>
+
+					</div>
+
+				</div>
+
+
+				<!-- =============================================
+					MAIN CHARACTER IMAGE
+					============================================= -->
+
+				<div class="character-main-image">
+
+					<img
+						src="https://iili.io/nTsYEN9.gif"
+						alt="Donald">
+
+				</div>
+			
+			
+				<!-- =============================================
+					STATIC ADDRESS RESEARCH
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Known Static MDLS / MDLX &amp; MSET Addresses
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched static memory
+							addresses associated with Donald. Addresses
+							may change depending on the current level,
+							world, area or loaded game state.
+			
+						</p>
+			
+			
+						<h4>
+							MDLS / MDLX Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+						</div>
+			
+			
+						<h4 style="margin-top: 24px;">
+							MSET Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
 								</span>
 			
 							</div>
@@ -1515,450 +1902,1670 @@ ID LIST
 			
 			
 				<!-- =============================================
-					RESEARCH VIDEO
+					ANIMATION STATE ID LIST
 					============================================= -->
 			
-				<div class="character-video gif-video">
-				
-					<img
-						src="https://iili.io/nTsqTHx.gif"
-						alt="Sora In Drive To The Heart">
-				
-				</div>
-				<div class="character-video gif-video">
-				
-					<img
-						src="https://iili.io/nTsaJUl.gif"
-						alt="Halloween Sora In Drive To The Heart">
-				
-				</div>
-				<div class="character-video gif-video">
-				
-					<img
-						src="https://iili.io/nTsa9ff.gif"
-						alt="Aquatic Sora In Drive To The Heart">
-				
-				</div>
+				<details class="research-spoiler">
+			
+					<summary>
+						Animation State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched animation state
+							IDs associated with Donald. Values may vary
+							depending on the current game state,
+							animation set or loaded character data.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+				<!-- =============================================
+					ENTITY PLAYER STATE ID LIST
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Entity Player State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched entity player
+							state IDs associated with Donald. Values
+							may vary depending on the current level,
+							area or loaded gameplay state.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
 			
 			</div>
-	
-			<!-- =================================================
-				DONALD
-				================================================= -->
-	
-			<div class="character-entry">
-	
-				<h3>
-					Donald
-				</h3>
-	
-				<p>
-	
-					Donald Duck is one of Sora's primary party
-					members. His character data includes party
-					behavior, animations, magic-related systems
-					and other gameplay resources.
-	
-				</p>
-	
-				<div class="character-data">
-	
-					<div>
-						<strong>
-							Character Default ID
-						</strong>
-	
-						<span>
-							TBD
-						</span>
-					</div>
-	
-					<div>
-						<strong>
-							Character Default Weapon ID
-						</strong>
-	
-						<span>
-							TBD
-						</span>
-					</div>
-	
-				</div>
-
-				<div class="character-addresses">
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MDLS / MDLX Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MSET Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-				</div>
-
-				<div class="character-video gif-video">
-				
-					<img
-						src="https://iili.io/nTsqTHx.gif"
-						alt="Sora In Drive To The Heart">
-				
-				</div>
-	
-			</div>
-	
 	
 			<!-- =================================================
 				GOOFY
 				================================================= -->
-	
+			
 			<div class="character-entry">
-	
+			
 				<h3>
 					Goofy
 				</h3>
-	
+			
 				<p>
-	
+			
 					Goofy is one of Sora's primary party members.
 					His character data includes party behavior,
 					animations, weapons and other gameplay
 					resources.
-	
+			
 				</p>
-	
-				<div class="character-data">
-	
-					<div>
+			
+			
+				<!-- =============================================
+					CHARACTER ID PROFILES
+					============================================= -->
+			
+				<div class="character-id-profiles">
+			
+					<!-- GOOFY ID 1 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="https://iili.io/nTsYeHB.gif"
+								alt="Goofy">
+			
+						</div>
+			
 						<strong>
-							Character Default ID
+							Character ID 1
 						</strong>
-	
+			
+						<span>
+							Goofy
+						</span>
+			
+					</div>
+			
+			
+					<!-- GOOFY ID 2 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="https://iili.io/nTsYeHB.gif"
+								alt="Goofy Halloween">
+			
+						</div>
+			
+						<strong>
+							Character ID 2
+						</strong>
+			
 						<span>
 							TBD
 						</span>
+			
 					</div>
-	
-					<div>
+			
+			
+					<!-- GOOFY ID 3 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="https://iili.io/nTsYeHB.gif"
+								alt="Goofy ID 3">
+			
+						</div>
+			
 						<strong>
-							Character Default Weapon ID
+							Character ID 3
 						</strong>
-	
+			
 						<span>
 							TBD
 						</span>
+			
 					</div>
-	
-				</div>
-
-				<div class="character-addresses">
-				
-					<div class="character-address">
-				
+			
+			
+					<!-- DEFAULT WEAPON ID -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="https://iili.io/nTsYeHB.gif"
+								alt="Goofy Default Weapon">
+			
+						</div>
+			
 						<strong>
-							Possible Known Static MDLS / MDLX Address
+							Default Weapon ID
 						</strong>
-				
-						<span class="unknown">
+			
+						<span>
 							TBD
 						</span>
-				
+			
 					</div>
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MSET Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
+			
 				</div>
-
-				<div class="character-video gif-video">
-				
+			
+			
+				<!-- =============================================
+					MAIN CHARACTER IMAGE
+					============================================= -->
+			
+				<div class="character-main-image">
+			
 					<img
 						src="https://iili.io/nTsYkAP.gif"
-						alt="Sora In Drive To The Heart">
-				
+						alt="Goofy">
+			
 				</div>
-	
+			
+			
+				<!-- =============================================
+					STATIC ADDRESS RESEARCH
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Known Static MDLS / MDLX &amp; MSET Addresses
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched static memory
+							addresses associated with Goofy. Addresses
+							may change depending on the current level,
+							world, area or loaded game state.
+			
+						</p>
+			
+			
+						<h4>
+							MDLS / MDLX Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+						</div>
+			
+			
+						<h4 style="margin-top: 24px;">
+							MSET Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+				<!-- =============================================
+					ANIMATION STATE ID LIST
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Animation State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched animation state
+							IDs associated with Goofy. Values may vary
+							depending on the current game state,
+							animation set or loaded character data.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+				<!-- =============================================
+					ENTITY PLAYER STATE ID LIST
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Entity Player State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched entity player
+							state IDs associated with Goofy. Values
+							may vary depending on the current level,
+							area or loaded gameplay state.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
 			</div>
-	
 	
 			<!-- =================================================
 				KAIRI
 				================================================= -->
-	
+			
 			<div class="character-entry">
-	
+			
 				<h3>
 					Kairi
 				</h3>
-	
+			
 				<p>
-	
+			
 					Kairi is one of the central characters in
 					Kingdom Hearts. Her resources include
 					character models, animations, story-related
 					data and other character assets.
-	
+			
 				</p>
-	
-				<div class="character-data">
-	
-					<div>
+			
+			
+				<!-- =============================================
+					CHARACTER ID PROFILES
+					============================================= -->
+			
+				<div class="character-id-profiles">
+			
+					<!-- KAIRI ID 1 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="KAIRI_ID_1_IMAGE_URL_HERE"
+								alt="Kairi">
+			
+						</div>
+			
 						<strong>
-							Character Default ID
+							Character ID 1
 						</strong>
-						
+			
+						<span>
+							Kairi
+						</span>
+			
+					</div>
+			
+			
+					<!-- KAIRI ID 2 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="KAIRI_ID_2_IMAGE_URL_HERE"
+								alt="Halloween Kairi">
+			
+						</div>
+			
 						<strong>
-							Halloween Character ID
+							Character ID 2
 						</strong>
-
+			
+						<span>
+							Halloween Kairi
+						</span>
+			
+					</div>
+			
+			
+					<!-- KAIRI ID 3 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="KAIRI_ID_3_IMAGE_URL_HERE"
+								alt="Aquatic Kairi">
+			
+						</div>
+			
 						<strong>
-							Aquatic Character ID
-						</strong>						
-	
+							Character ID 3
+						</strong>
+			
+						<span>
+							Aquatic Kairi
+						</span>
+			
+					</div>
+			
+			
+					<!-- DEFAULT WEAPON ID -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="KAIRI_WEAPON_IMAGE_URL_HERE"
+								alt="Kairi Default Weapon">
+			
+						</div>
+			
+						<strong>
+							Default Weapon ID
+						</strong>
+			
 						<span>
 							TBD
 						</span>
+			
 					</div>
-	
-					<div>
-						<strong>
-							Character Default Weapon ID
-						</strong>
-	
-						<span>
-							TBD
-						</span>
-					</div>
-	
+			
 				</div>
-
-				<div class="character-addresses">
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MDLS / MDLX Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MSET Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-				</div>
-	
-				<div class="character-video gif-video">
-				
+			
+			
+				<!-- =============================================
+					MAIN CHARACTER IMAGE
+					============================================= -->
+			
+				<div class="character-main-image">
+			
 					<img
 						src="https://iili.io/nTsqTHx.gif"
-						alt="Sora In Drive To The Heart">
-				
+						alt="Kairi">
+			
 				</div>
-	
+			
+			
+				<!-- =============================================
+					STATIC ADDRESS RESEARCH
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Known Static MDLS / MDLX &amp; MSET Addresses
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched static memory
+							addresses associated with Kairi. Addresses
+							may change depending on the current level,
+							world, area or loaded game state.
+			
+						</p>
+			
+			
+						<h4>
+							MDLS / MDLX Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+						</div>
+			
+			
+						<h4 style="margin-top: 24px;">
+							MSET Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+				<!-- =============================================
+					ANIMATION STATE ID LIST
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Animation State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched animation state
+							IDs associated with Kairi. Values may vary
+							depending on the current game state,
+							animation set or loaded character data.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+				<!-- =============================================
+					ENTITY PLAYER STATE ID LIST
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Entity Player State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched entity player
+							state IDs associated with Kairi. Values
+							may vary depending on the current level,
+							area or loaded gameplay state.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+			</div>
 	
 			<!-- =================================================
 				RIKU
 				================================================= -->
-	
+			
 			<div class="character-entry">
-	
+			
 				<h3>
 					Riku
 				</h3>
-	
+			
 				<p>
-	
+			
 					Riku is a major character and rival to Sora.
 					His data includes character models,
 					animations, weapons, gameplay resources
 					and story-related behavior.
-	
+			
 				</p>
-	
-				<div class="character-data">
-	
-					<div>
+			
+			
+				<!-- =============================================
+					CHARACTER ID PROFILES
+					============================================= -->
+			
+				<div class="character-id-profiles">
+			
+					<!-- RIKU ID 1 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="RIKU_ID_1_IMAGE_URL_HERE"
+								alt="Riku">
+			
+						</div>
+			
 						<strong>
-							Character Default ID
+							Character ID 1
 						</strong>
-	
+			
+						<span>
+							Riku
+						</span>
+			
+					</div>
+			
+			
+					<!-- RIKU ID 2 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="RIKU_ID_2_IMAGE_URL_HERE"
+								alt="Riku ID 2">
+			
+						</div>
+			
+						<strong>
+							Character ID 2
+						</strong>
+			
 						<span>
 							TBD
 						</span>
+			
 					</div>
-	
-					<div>
+			
+			
+					<!-- RIKU ID 3 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="RIKU_ID_3_IMAGE_URL_HERE"
+								alt="Riku ID 3">
+			
+						</div>
+			
 						<strong>
-							Character Default Weapon ID
+							Character ID 3
 						</strong>
-	
+			
 						<span>
 							TBD
 						</span>
+			
 					</div>
-	
-				</div>
-
-				<div class="character-addresses">
-				
-					<div class="character-address">
-				
+			
+			
+					<!-- DEFAULT WEAPON ID -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="RIKU_WEAPON_IMAGE_URL_HERE"
+								alt="Riku Default Weapon">
+			
+						</div>
+			
 						<strong>
-							Possible Known Static MDLS / MDLX Address
+							Default Weapon ID
 						</strong>
-				
-						<span class="unknown">
+			
+						<span>
 							TBD
 						</span>
-				
+			
 					</div>
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MSET Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
+			
 				</div>
-	
-				<div class="character-video gif-video">
-				
+			
+			
+				<!-- =============================================
+					MAIN CHARACTER IMAGE
+					============================================= -->
+			
+				<div class="character-main-image">
+			
 					<img
 						src="https://iili.io/nTsqTHx.gif"
-						alt="Sora In Drive To The Heart">
-				
+						alt="Riku">
+			
 				</div>
-	
+			
+			
+				<!-- =============================================
+					STATIC ADDRESS RESEARCH
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Known Static MDLS / MDLX &amp; MSET Addresses
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched static memory
+							addresses associated with Riku. Addresses
+							may change depending on the current level,
+							world, area or loaded game state.
+			
+						</p>
+			
+			
+						<h4>
+							MDLS / MDLX Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+						</div>
+			
+			
+						<h4 style="margin-top: 24px;">
+							MSET Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+				<!-- =============================================
+					ANIMATION STATE ID LIST
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Animation State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched animation state
+							IDs associated with Riku. Values may vary
+							depending on the current game state,
+							animation set or loaded character data.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+				<!-- =============================================
+					ENTITY PLAYER STATE ID LIST
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Entity Player State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched entity player
+							state IDs associated with Riku. Values
+							may vary depending on the current level,
+							area or loaded gameplay state.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
 			</div>
-	
 	
 			<!-- =================================================
 				ANSEM
 				================================================= -->
-	
+			
 			<div class="character-entry">
-	
+			
 				<h3>
 					Ansem
 				</h3>
-	
+			
 				<p>
-	
+			
 					Ansem-related character and boss data,
 					including models, animations, battle
 					resources and other assets used throughout
 					Kingdom Hearts.
-	
+			
 				</p>
-	
-				<div class="character-data">
-	
-					<div>
+			
+			
+				<!-- =============================================
+					CHARACTER ID PROFILES
+					============================================= -->
+			
+				<div class="character-id-profiles">
+			
+					<!-- ANSEM ID 1 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="ANSEM_ID_1_IMAGE_URL_HERE"
+								alt="Ansem">
+			
+						</div>
+			
 						<strong>
-							Character Default ID
+							Character ID 1
 						</strong>
-	
+			
+						<span>
+							Ansem
+						</span>
+			
+					</div>
+			
+			
+					<!-- ANSEM ID 2 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="ANSEM_ID_2_IMAGE_URL_HERE"
+								alt="Ansem ID 2">
+			
+						</div>
+			
+						<strong>
+							Character ID 2
+						</strong>
+			
 						<span>
 							TBD
 						</span>
+			
 					</div>
-	
-					<div>
+			
+			
+					<!-- ANSEM ID 3 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="ANSEM_ID_3_IMAGE_URL_HERE"
+								alt="Ansem ID 3">
+			
+						</div>
+			
 						<strong>
-							Character Default Weapon ID
+							Character ID 3
 						</strong>
-	
+			
 						<span>
 							TBD
 						</span>
+			
 					</div>
-	
-				</div>
-
-				<div class="character-addresses">
-				
-					<div class="character-address">
-				
+			
+			
+					<!-- DEFAULT WEAPON ID -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="ANSEM_WEAPON_IMAGE_URL_HERE"
+								alt="Ansem Default Weapon">
+			
+						</div>
+			
 						<strong>
-							Possible Known Static MDLS / MDLX Address
+							Default Weapon ID
 						</strong>
-				
-						<span class="unknown">
+			
+						<span>
 							TBD
 						</span>
-				
+			
 					</div>
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MSET Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
+			
 				</div>
-	
-				<div class="character-video gif-video">
-				
+			
+			
+				<!-- =============================================
+					MAIN CHARACTER IMAGE
+					============================================= -->
+			
+				<div class="character-main-image">
+			
 					<img
 						src="https://iili.io/nTsqTHx.gif"
-						alt="Sora In Drive To The Heart">
-				
+						alt="Ansem">
+			
 				</div>
-	
+			
+			
+				<!-- =============================================
+					STATIC ADDRESS RESEARCH
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Known Static MDLS / MDLX &amp; MSET Addresses
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched static memory
+							addresses associated with Ansem. Addresses
+							may change depending on the current level,
+							world, area or loaded game state.
+			
+						</p>
+			
+			
+						<h4>
+							MDLS / MDLX Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+						</div>
+			
+			
+						<h4 style="margin-top: 24px;">
+							MSET Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+				<!-- =============================================
+					ANIMATION STATE ID LIST
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Animation State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched animation state
+							IDs associated with Ansem. Values may vary
+							depending on the current game state,
+							animation set or loaded character data.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+				<!-- =============================================
+					ENTITY PLAYER STATE ID LIST
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Entity Player State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched entity player
+							state IDs associated with Ansem. Values
+							may vary depending on the current level,
+							area or loaded gameplay state.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
 			</div>
-	
-		</div>
-	
 	
 		<!-- ====================================================
 			KINGDOM HEARTS 2
@@ -1983,491 +3590,2334 @@ ID LIST
 			<!-- =================================================
 				SORA
 				================================================= -->
-	
+			
 			<div class="character-entry">
-	
+			
 				<h3>
 					Sora
 				</h3>
-	
+			
 				<p>
-	
+			
 					The primary playable character in Kingdom
 					Hearts 2. His research includes character
 					models, animations, Drive Forms, weapons,
 					abilities and other gameplay resources.
-	
+			
 				</p>
-	
-				<div class="character-data">
-	
-					<div>
+			
+			
+				<!-- =============================================
+					CHARACTER ID PROFILES
+					============================================= -->
+			
+				<div class="character-id-profiles">
+			
+					<!-- SORA ID 1 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="KH2_SORA_ID_1_IMAGE_URL_HERE"
+								alt="Sora">
+			
+						</div>
+			
 						<strong>
-							Character Default ID
+							Character ID 1
 						</strong>
-	
+			
+						<span>
+							Sora
+						</span>
+			
+					</div>
+			
+			
+					<!-- SORA ID 2 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="KH2_SORA_ID_2_IMAGE_URL_HERE"
+								alt="Sora ID 2">
+			
+						</div>
+			
+						<strong>
+							Character ID 2
+						</strong>
+			
 						<span>
 							TBD
 						</span>
+			
 					</div>
-	
-					<div>
+			
+			
+					<!-- SORA ID 3 -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="KH2_SORA_ID_3_IMAGE_URL_HERE"
+								alt="Sora ID 3">
+			
+						</div>
+			
 						<strong>
-							Character Default Weapon ID
+							Character ID 3
 						</strong>
-	
+			
 						<span>
 							TBD
 						</span>
+			
 					</div>
-	
-				</div>
-
-				<div class="character-addresses">
-				
-					<div class="character-address">
-				
+			
+			
+					<!-- DEFAULT WEAPON ID -->
+			
+					<div class="character-id-profile">
+			
+						<div class="character-id-image">
+			
+							<img
+								src="KH2_SORA_WEAPON_IMAGE_URL_HERE"
+								alt="Sora Default Weapon">
+			
+						</div>
+			
 						<strong>
-							Possible Known Static MDLS / MDLX Address
+							Default Weapon ID
 						</strong>
-				
-						<span class="unknown">
+			
+						<span>
 							TBD
 						</span>
-				
+			
 					</div>
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MSET Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
+			
 				</div>
-	
-				<div class="character-video gif-video">
-				
+			
+			
+				<!-- =============================================
+					MAIN CHARACTER IMAGE
+					============================================= -->
+			
+				<div class="character-main-image">
+			
 					<img
 						src="https://iili.io/nTsqTHx.gif"
-						alt="Sora In Drive To The Heart">
-				
+						alt="Sora">
+			
 				</div>
-	
+			
+			
+				<!-- =============================================
+					STATIC ADDRESS RESEARCH
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Known Static MDLS / MDLX &amp; MSET Addresses
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched static memory
+							addresses associated with Sora in Kingdom
+							Hearts 2. Addresses may change depending
+							on the current level, world, area, Drive
+							Form or loaded game state.
+			
+						</p>
+			
+			
+						<h4>
+							MDLS / MDLX Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+						</div>
+			
+			
+						<h4 style="margin-top: 24px;">
+							MSET Addresses
+						</h4>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+				<!-- =============================================
+					ANIMATION STATE ID LIST
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Animation State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched animation state
+							IDs associated with Sora in Kingdom Hearts 2.
+							Values may vary depending on the current
+							game state, Drive Form, animation set or
+							loaded character data.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown animation state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
+				<!-- =============================================
+					ENTITY PLAYER STATE ID LIST
+					============================================= -->
+			
+				<details class="research-spoiler">
+			
+					<summary>
+						Entity Player State ID List
+					</summary>
+			
+					<div class="research-spoiler-content">
+			
+						<p class="research-note">
+			
+							Known and/or researched entity player
+							state IDs associated with Sora in Kingdom
+							Hearts 2. Values may vary depending on the
+							current level, area, Drive Form or loaded
+							gameplay state.
+			
+						</p>
+			
+						<div class="id-list">
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+							<div>
+			
+								<span class="id-value">
+									TBD
+								</span>
+			
+								<span class="id-description">
+									Unknown player state
+								</span>
+			
+							</div>
+			
+						</div>
+			
+					</div>
+			
+				</details>
+			
+			
 			</div>
-	
 	
 			<!-- =================================================
 				DONALD
 				================================================= -->
-	
+
 			<div class="character-entry">
-	
+
 				<h3>
 					Donald
 				</h3>
-	
+
 				<p>
-	
+
 					Donald Duck returns as one of Sora's primary
 					party members. His Kingdom Hearts 2 data
 					includes party behavior, animations, magic
 					systems and other gameplay resources.
-	
+
 				</p>
-	
-				<div class="character-data">
-	
-					<div>
+
+
+				<!-- =============================================
+					CHARACTER ID PROFILES
+					============================================= -->
+
+				<div class="character-id-profiles">
+
+					<!-- DONALD ID 1 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="https://iili.io/nTsYEN9.gif"
+								alt="Donald">
+
+						</div>
+
 						<strong>
-							Character Default ID
+							Character ID 1
 						</strong>
-	
+
+						<span>
+							Donald
+						</span>
+
+					</div>
+
+
+					<!-- DONALD ID 2 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="https://iili.io/nTsY09S.gif"
+								alt="Aquatic Donald">
+
+						</div>
+
+						<strong>
+							Character ID 2
+						</strong>
+
 						<span>
 							TBD
 						</span>
+
 					</div>
-	
-					<div>
+
+
+					<!-- DONALD ID 3 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="https://iili.io/nTsYmVs.gif"
+								alt="Halloween Donald">
+
+						</div>
+
 						<strong>
-							Character Default Weapon ID
+							Character ID 3
 						</strong>
-	
+
 						<span>
 							TBD
 						</span>
+
 					</div>
-	
-				</div>
-				
-				<div class="character-addresses">
-				
-					<div class="character-address">
-				
+
+
+					<!-- DEFAULT WEAPON ID -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="https://iili.io/nTsYEN9.gif"
+								alt="Donald Default Weapon">
+
+						</div>
+
 						<strong>
-							Possible Known Static MDLS / MDLX Address
+							Default Weapon ID
 						</strong>
-				
-						<span class="unknown">
+
+						<span>
 							TBD
 						</span>
-				
+
 					</div>
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MSET Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
+
 				</div>
-				
-				<div class="character-video gif-video">
-				
+
+
+				<!-- =============================================
+					MAIN CHARACTER IMAGE
+					============================================= -->
+
+				<div class="character-main-image">
+
 					<img
-						src="https://iili.io/nTsqTHx.gif"
-						alt="Sora In Drive To The Heart">
-				
+						src="https://iili.io/nTsYEN9.gif"
+						alt="Donald">
+
 				</div>
-	
+
+
+				<!-- =============================================
+					STATIC ADDRESS RESEARCH
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Known Static MDLS / MDLX &amp; MSET Addresses
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched static memory
+							addresses associated with Donald in
+							Kingdom Hearts 2. Addresses may change
+							depending on the current level, world,
+							area, party configuration or loaded
+							game state.
+
+						</p>
+
+
+						<h4>
+							MDLS / MDLX Addresses
+						</h4>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+						</div>
+
+
+						<h4 style="margin-top: 24px;">
+							MSET Addresses
+						</h4>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
+				<!-- =============================================
+					ANIMATION STATE ID LIST
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Animation State ID List
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched animation state
+							IDs associated with Donald in Kingdom
+							Hearts 2. Values may vary depending on
+							the current game state, animation set,
+							party state or loaded character data.
+
+						</p>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
+				<!-- =============================================
+					ENTITY PLAYER STATE ID LIST
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Entity Player State ID List
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched entity player
+							state IDs associated with Donald in
+							Kingdom Hearts 2. Values may vary
+							depending on the current level, area,
+							party configuration or loaded gameplay
+							state.
+
+						</p>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
 			</div>
 	
 	
 			<!-- =================================================
 				GOOFY
 				================================================= -->
-	
+
 			<div class="character-entry">
-	
+
 				<h3>
 					Goofy
 				</h3>
-	
+
 				<p>
-	
+
 					Goofy returns as a primary party member.
 					His data includes party behavior, weapons,
 					animations and other Kingdom Hearts 2
 					gameplay resources.
-	
+
 				</p>
-	
-				<div class="character-data">
-	
-					<div>
+
+
+				<!-- =============================================
+					CHARACTER ID PROFILES
+					============================================= -->
+
+				<div class="character-id-profiles">
+
+					<!-- GOOFY ID 1 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_GOOFY_ID_1_IMAGE_URL_HERE"
+								alt="Goofy">
+
+						</div>
+
 						<strong>
-							Character Default ID
+							Character ID 1
 						</strong>
-	
+
+						<span>
+							Goofy
+						</span>
+
+					</div>
+
+
+					<!-- GOOFY ID 2 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_GOOFY_ID_2_IMAGE_URL_HERE"
+								alt="Goofy ID 2">
+
+						</div>
+
+						<strong>
+							Character ID 2
+						</strong>
+
 						<span>
 							TBD
 						</span>
+
 					</div>
-	
-					<div>
+
+
+					<!-- GOOFY ID 3 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_GOOFY_ID_3_IMAGE_URL_HERE"
+								alt="Goofy ID 3">
+
+						</div>
+
 						<strong>
-							Character Default Weapon ID
+							Character ID 3
 						</strong>
-	
+
 						<span>
 							TBD
 						</span>
+
 					</div>
-	
+
+
+					<!-- DEFAULT WEAPON ID -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_GOOFY_WEAPON_IMAGE_URL_HERE"
+								alt="Goofy Default Weapon">
+
+						</div>
+
+						<strong>
+							Default Weapon ID
+						</strong>
+
+						<span>
+							TBD
+						</span>
+
+					</div>
+
 				</div>
 
-				<div class="character-addresses">
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MDLS / MDLX Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MSET Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-				</div>
-	
-				<div class="character-video gif-video">
-				
+
+				<!-- =============================================
+					MAIN CHARACTER IMAGE
+					============================================= -->
+
+				<div class="character-main-image">
+
 					<img
 						src="https://iili.io/nTsYkAP.gif"
-						alt="Sora In Drive To The Heart">
-				
+						alt="Goofy">
+
 				</div>
-	
+
+
+				<!-- =============================================
+					STATIC ADDRESS RESEARCH
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Known Static MDLS / MDLX &amp; MSET Addresses
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched static memory
+							addresses associated with Goofy in
+							Kingdom Hearts 2. Addresses may change
+							depending on the current level, world,
+							area, party configuration or loaded
+							game state.
+
+						</p>
+
+
+						<h4>
+							MDLS / MDLX Addresses
+						</h4>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+						</div>
+
+
+						<h4 style="margin-top: 24px;">
+							MSET Addresses
+						</h4>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
+				<!-- =============================================
+					ANIMATION STATE ID LIST
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Animation State ID List
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched animation state
+							IDs associated with Goofy in Kingdom
+							Hearts 2. Values may vary depending on
+							the current game state, animation set,
+							party state or loaded character data.
+
+						</p>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
+				<!-- =============================================
+					ENTITY PLAYER STATE ID LIST
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Entity Player State ID List
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched entity player
+							state IDs associated with Goofy in
+							Kingdom Hearts 2. Values may vary
+							depending on the current level, area,
+							party configuration or loaded gameplay
+							state.
+
+						</p>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
 			</div>
 	
 	
 			<!-- =================================================
 				KAIRI
 				================================================= -->
-	
+
 			<div class="character-entry">
-	
+
 				<h3>
 					Kairi
 				</h3>
-	
+
 				<p>
-	
+
 					Kairi's Kingdom Hearts 2 resources include
 					character models, animations, story-related
 					data and other assets.
-	
+
 				</p>
-	
-				<div class="character-data">
-	
-					<div>
+
+
+				<!-- =============================================
+					CHARACTER ID PROFILES
+					============================================= -->
+
+				<div class="character-id-profiles">
+
+					<!-- KAIRI ID 1 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_KAIRI_ID_1_IMAGE_URL_HERE"
+								alt="Kairi">
+
+						</div>
+
 						<strong>
-							Character Default ID
+							Character ID 1
 						</strong>
-	
+
+						<span>
+							Kairi
+						</span>
+
+					</div>
+
+
+					<!-- KAIRI ID 2 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_KAIRI_ID_2_IMAGE_URL_HERE"
+								alt="Kairi ID 2">
+
+						</div>
+
+						<strong>
+							Character ID 2
+						</strong>
+
 						<span>
 							TBD
 						</span>
+
 					</div>
-	
-					<div>
+
+
+					<!-- KAIRI ID 3 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_KAIRI_ID_3_IMAGE_URL_HERE"
+								alt="Kairi ID 3">
+
+						</div>
+
 						<strong>
-							Character Default Weapon ID
+							Character ID 3
 						</strong>
-	
+
 						<span>
 							TBD
 						</span>
+
 					</div>
-	
+
+
+					<!-- DEFAULT WEAPON ID -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_KAIRI_WEAPON_IMAGE_URL_HERE"
+								alt="Kairi Default Weapon">
+
+						</div>
+
+						<strong>
+							Default Weapon ID
+						</strong>
+
+						<span>
+							TBD
+						</span>
+
+					</div>
+
 				</div>
 
-				<div class="character-addresses">
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MDLS / MDLX Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MSET Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-				</div>
-	
-				<div class="character-video gif-video">
-				
+
+				<!-- =============================================
+					MAIN CHARACTER IMAGE
+					============================================= -->
+
+				<div class="character-main-image">
+
 					<img
-						src="https://iili.io/nTsqTHx.gif"
-						alt="Sora In Drive To The Heart">
-				
+						src="KH2_KAIRI_MAIN_IMAGE_URL_HERE"
+						alt="Kairi">
+
 				</div>
-	
+
+
+				<!-- =============================================
+					STATIC ADDRESS RESEARCH
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Known Static MDLS / MDLX &amp; MSET Addresses
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched static memory
+							addresses associated with Kairi in
+							Kingdom Hearts 2. Addresses may change
+							depending on the current level, world,
+							area, story progression or loaded
+							game state.
+
+						</p>
+
+
+						<h4>
+							MDLS / MDLX Addresses
+						</h4>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+						</div>
+
+
+						<h4 style="margin-top: 24px;">
+							MSET Addresses
+						</h4>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
+				<!-- =============================================
+					ANIMATION STATE ID LIST
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Animation State ID List
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched animation state
+							IDs associated with Kairi in Kingdom
+							Hearts 2. Values may vary depending on
+							the current game state, animation set,
+							story progression or loaded character
+							data.
+
+						</p>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
+				<!-- =============================================
+					ENTITY PLAYER STATE ID LIST
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Entity Player State ID List
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched entity player
+							state IDs associated with Kairi in
+							Kingdom Hearts 2. Values may vary
+							depending on the current level, area,
+							story progression or loaded gameplay
+							state.
+
+						</p>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
 			</div>
 	
 	
 			<!-- =================================================
 				RIKU
 				================================================= -->
-	
+
 			<div class="character-entry">
-	
+
 				<h3>
 					Riku
 				</h3>
-	
+
 				<p>
-	
+
 					Riku plays a significant role in Kingdom
 					Hearts 2. His data includes character models,
 					animations, weapons, abilities and gameplay
 					resources.
-	
+
 				</p>
-	
-				<div class="character-data">
-	
-					<div>
+
+
+				<!-- =============================================
+					CHARACTER ID PROFILES
+					============================================= -->
+
+				<div class="character-id-profiles">
+
+					<!-- RIKU ID 1 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_RIKU_ID_1_IMAGE_URL_HERE"
+								alt="Riku">
+
+						</div>
+
 						<strong>
-							Character Default ID
+							Character ID 1
 						</strong>
-	
+
+						<span>
+							Riku
+						</span>
+
+					</div>
+
+
+					<!-- RIKU ID 2 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_RIKU_ID_2_IMAGE_URL_HERE"
+								alt="Riku ID 2">
+
+						</div>
+
+						<strong>
+							Character ID 2
+						</strong>
+
 						<span>
 							TBD
 						</span>
+
 					</div>
-	
-					<div>
+
+
+					<!-- RIKU ID 3 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_RIKU_ID_3_IMAGE_URL_HERE"
+								alt="Riku ID 3">
+
+						</div>
+
 						<strong>
-							Character Default Weapon ID
+							Character ID 3
 						</strong>
-	
+
 						<span>
 							TBD
 						</span>
+
 					</div>
-	
+
+
+					<!-- DEFAULT WEAPON ID -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_RIKU_WEAPON_IMAGE_URL_HERE"
+								alt="Riku Default Weapon">
+
+						</div>
+
+						<strong>
+							Default Weapon ID
+						</strong>
+
+						<span>
+							TBD
+						</span>
+
+					</div>
+
 				</div>
 
-				<div class="character-addresses">
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MDLS / MDLX Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MSET Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-				</div>
-	
-				<div class="character-video gif-video">
-				
+
+				<!-- =============================================
+					MAIN CHARACTER IMAGE
+					============================================= -->
+
+				<div class="character-main-image">
+
 					<img
-						src="https://iili.io/nTsqTHx.gif"
-						alt="Sora In Drive To The Heart">
-				
+						src="KH2_RIKU_MAIN_IMAGE_URL_HERE"
+						alt="Riku">
+
 				</div>
-	
-			</div>	
+
+
+				<!-- =============================================
+					STATIC ADDRESS RESEARCH
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Known Static MDLS / MDLX &amp; MSET Addresses
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched static memory
+							addresses associated with Riku in
+							Kingdom Hearts 2. Addresses may change
+							depending on the current level, world,
+							area, story progression or loaded
+							game state.
+
+						</p>
+
+
+						<h4>
+							MDLS / MDLX Addresses
+						</h4>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+						</div>
+
+
+						<h4 style="margin-top: 24px;">
+							MSET Addresses
+						</h4>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
+				<!-- =============================================
+					ANIMATION STATE ID LIST
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Animation State ID List
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched animation state
+							IDs associated with Riku in Kingdom
+							Hearts 2. Values may vary depending on
+							the current game state, animation set,
+							story progression or loaded character
+							data.
+
+						</p>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
+				<!-- =============================================
+					ENTITY PLAYER STATE ID LIST
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Entity Player State ID List
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched entity player
+							state IDs associated with Riku in
+							Kingdom Hearts 2. Values may vary
+							depending on the current level, area,
+							story progression or loaded gameplay
+							state.
+
+						</p>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
+			</div>
 	
 			<!-- =================================================
 				ANSEM
 				================================================= -->
-	
+
 			<div class="character-entry">
-	
+
 				<h3>
 					Ansem
 				</h3>
-	
+
 				<p>
-	
+
 					Ansem-related resources and character data
 					used throughout Kingdom Hearts 2, including
 					story, battle and other game assets.
-	
+
 				</p>
-	
-				<div class="character-data">
-	
-					<div>
+
+
+				<!-- =============================================
+					CHARACTER ID PROFILES
+					============================================= -->
+
+				<div class="character-id-profiles">
+
+					<!-- ANSEM ID 1 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_ANSEM_ID_1_IMAGE_URL_HERE"
+								alt="Ansem">
+
+						</div>
+
 						<strong>
-							Character Default ID
+							Character ID 1
 						</strong>
-	
+
+						<span>
+							Ansem
+						</span>
+
+					</div>
+
+
+					<!-- ANSEM ID 2 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_ANSEM_ID_2_IMAGE_URL_HERE"
+								alt="Ansem ID 2">
+
+						</div>
+
+						<strong>
+							Character ID 2
+						</strong>
+
 						<span>
 							TBD
 						</span>
+
 					</div>
-	
-					<div>
+
+
+					<!-- ANSEM ID 3 -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_ANSEM_ID_3_IMAGE_URL_HERE"
+								alt="Ansem ID 3">
+
+						</div>
+
 						<strong>
-							Character Default Weapon ID
+							Character ID 3
 						</strong>
-	
+
 						<span>
 							TBD
 						</span>
+
 					</div>
-	
+
+
+					<!-- DEFAULT WEAPON ID -->
+
+					<div class="character-id-profile">
+
+						<div class="character-id-image">
+
+							<img
+								src="KH2_ANSEM_WEAPON_IMAGE_URL_HERE"
+								alt="Ansem Default Weapon">
+
+						</div>
+
+						<strong>
+							Default Weapon ID
+						</strong>
+
+						<span>
+							TBD
+						</span>
+
+					</div>
+
 				</div>
 
-				<div class="character-addresses">
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MDLS / MDLX Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-					<div class="character-address">
-				
-						<strong>
-							Possible Known Static MSET Address
-						</strong>
-				
-						<span class="unknown">
-							TBD
-						</span>
-				
-					</div>
-				
-				</div>
-	
-				<div class="character-video gif-video">
-				
+
+				<!-- =============================================
+					MAIN CHARACTER IMAGE
+					============================================= -->
+
+				<div class="character-main-image">
+
 					<img
-						src="https://iili.io/nTsqTHx.gif"
-						alt="Sora In Drive To The Heart">
-				
+						src="KH2_ANSEM_MAIN_IMAGE_URL_HERE"
+						alt="Ansem">
+
 				</div>
-	
+
+
+				<!-- =============================================
+					STATIC ADDRESS RESEARCH
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Known Static MDLS / MDLX &amp; MSET Addresses
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched static memory
+							addresses associated with Ansem in
+							Kingdom Hearts 2. Addresses may change
+							depending on the current level, world,
+							area, story progression or loaded
+							game state.
+
+						</p>
+
+
+						<h4>
+							MDLS / MDLX Addresses
+						</h4>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+						</div>
+
+
+						<h4 style="margin-top: 24px;">
+							MSET Addresses
+						</h4>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Level / Area — Unknown
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
+				<!-- =============================================
+					ANIMATION STATE ID LIST
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Animation State ID List
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched animation state
+							IDs associated with Ansem in Kingdom
+							Hearts 2. Values may vary depending on
+							the current game state, animation set,
+							story progression or loaded character
+							data.
+
+						</p>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown animation state
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
+				<!-- =============================================
+					ENTITY PLAYER STATE ID LIST
+					============================================= -->
+
+				<details class="research-spoiler">
+
+					<summary>
+						Entity Player State ID List
+					</summary>
+
+					<div class="research-spoiler-content">
+
+						<p class="research-note">
+
+							Known and/or researched entity player
+							state IDs associated with Ansem in
+							Kingdom Hearts 2. Values may vary
+							depending on the current level, area,
+							story progression or loaded gameplay
+							state.
+
+						</p>
+
+						<div class="id-list">
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+							<div>
+
+								<span class="id-value">
+									TBD
+								</span>
+
+								<span class="id-description">
+									Unknown player state
+								</span>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</details>
+
+
 			</div>
-	
+
+
 		</div>
 	
 	</section>
