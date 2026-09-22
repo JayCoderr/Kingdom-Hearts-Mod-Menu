@@ -1132,6 +1132,93 @@ ID LIST
     }
 
 }
+/* ============================================================
+   ASSET RESEARCH CARD
+   ============================================================ */
+
+#assets .list-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+/* ============================================================
+   INDIVIDUAL ASSET ENTRY
+   ============================================================ */
+
+.asset-entry {
+    padding: 24px 26px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.asset-entry:last-child {
+    border-bottom: none;
+}
+
+.asset-entry h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: #ffffff;
+}
+
+.asset-entry p {
+    margin: 0;
+    color: #999999;
+    font-size: 12px;
+    line-height: 1.7;
+    max-width: 900px;
+}
+
+/* ============================================================
+   ASSET DETAILS
+   ============================================================ */
+
+.asset-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.asset-details > div {
+    padding: 12px 14px;
+    background: rgba(0, 0, 0, 0.30);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 3px;
+}
+
+.asset-details strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.asset-details span {
+    display: block;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #888888;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    .asset-entry {
+        padding: 20px;
+    }
+
+    .asset-details {
+        grid-template-columns: 1fr;
+    }
+
+}
+
 </style>
 
 </head>
@@ -5783,157 +5870,635 @@ ID LIST
 	</section>
 
 
-    <!-- ========================================================
-         WORLDS
-         ======================================================== -->
+	<!-- ========================================================
+		WORLDS
+		======================================================== -->
+	
+	<section id="worlds" class="tab-content">
+	
+		<h2>Worlds</h2>
+	
+		<p class="section-description">
+			Kingdom Hearts worlds and area information.
+		</p>
+	
+		<div class="world-list">
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="DESTINY_ISLANDS_IMAGE_URL_HERE" alt="Destiny Islands">
+					</div>
+					<div class="world-info">
+						<h3>Destiny Islands</h3>
+						<p>Starting world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>DESTINY_ISLANDS_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="TRAVERSE_TOWN_IMAGE_URL_HERE" alt="Traverse Town">
+					</div>
+					<div class="world-info">
+						<h3>Traverse Town</h3>
+						<p>Central hub world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>TRAVERSE_TOWN_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="WONDERLAND_IMAGE_URL_HERE" alt="Wonderland">
+					</div>
+					<div class="world-info">
+						<h3>Wonderland</h3>
+						<p>Alice in Wonderland world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>WONDERLAND_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="OLYMPUS_COLISEUM_IMAGE_URL_HERE" alt="Olympus Coliseum">
+					</div>
+					<div class="world-info">
+						<h3>Olympus Coliseum</h3>
+						<p>Hercules world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>OLYMPUS_COLISEUM_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="DEEP_JUNGLE_IMAGE_URL_HERE" alt="Deep Jungle">
+					</div>
+					<div class="world-info">
+						<h3>Deep Jungle</h3>
+						<p>Tarzan world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>DEEP_JUNGLE_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="AGRABAH_IMAGE_URL_HERE" alt="Agrabah">
+					</div>
+					<div class="world-info">
+						<h3>Agrabah</h3>
+						<p>Aladdin world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>AGRABAH_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="MONSTRO_IMAGE_URL_HERE" alt="Monstro">
+					</div>
+					<div class="world-info">
+						<h3>Monstro</h3>
+						<p>Pinocchio world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>MONSTRO_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="ATLANTICA_IMAGE_URL_HERE" alt="Atlantica">
+					</div>
+					<div class="world-info">
+						<h3>Atlantica</h3>
+						<p>The Little Mermaid world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>ATLANTICA_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="HALLOWEEN_TOWN_IMAGE_URL_HERE" alt="Halloween Town">
+					</div>
+					<div class="world-info">
+						<h3>Halloween Town</h3>
+						<p>The Nightmare Before Christmas world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>HALLOWEEN_TOWN_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="NEVERLAND_IMAGE_URL_HERE" alt="Neverland">
+					</div>
+					<div class="world-info">
+						<h3>Neverland</h3>
+						<p>Peter Pan world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>NEVERLAND_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="HOLLOW_BASTION_IMAGE_URL_HERE" alt="Hollow Bastion">
+					</div>
+					<div class="world-info">
+						<h3>Hollow Bastion</h3>
+						<p>Major story world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>HOLLOW_BASTION_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="END_OF_THE_WORLD_IMAGE_URL_HERE" alt="End of the World">
+					</div>
+					<div class="world-info">
+						<h3>End of the World</h3>
+						<p>Final world.</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>END_OF_THE_WORLD_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+		</div>
+	
+	</section>
 
-    <section
-        id="worlds"
-        class="tab-content">
-
-        <h2>
-            Worlds
-        </h2>
-
-        <p class="section-description">
-
-            Kingdom Hearts worlds and area information.
-
-        </p>
-
-
-        <div class="list-grid">
-
-            <div class="list-card">
-                <h3>Destiny Islands</h3>
-                <p>Starting world.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>Traverse Town</h3>
-                <p>Central hub world.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>Wonderland</h3>
-                <p>Alice in Wonderland world.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>Olympus Coliseum</h3>
-                <p>Hercules world.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>Deep Jungle</h3>
-                <p>Tarzan world.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>Agrabah</h3>
-                <p>Aladdin world.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>Monstro</h3>
-                <p>Pinocchio world.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>Atlantica</h3>
-                <p>The Little Mermaid world.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>Halloween Town</h3>
-                <p>The Nightmare Before Christmas world.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>Neverland</h3>
-                <p>Peter Pan world.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>Hollow Bastion</h3>
-                <p>Major story world.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>End of the World</h3>
-                <p>Final world.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ========================================================
-         ASSETS
-         ======================================================== -->
-
-    <section
-        id="assets"
-        class="tab-content">
-
-        <h2>
-            Assets
-        </h2>
-
-        <p class="section-description">
-
-            Kingdom Hearts file formats and asset research.
-
-        </p>
-
-
-        <div class="list-grid">
-
-            <div class="list-card">
-                <h3>.BIN</h3>
-                <p>Binary game data and containers.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>.HED</h3>
-                <p>Archive/header information.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>.PKG</h3>
-                <p>Package data.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>.WPN</h3>
-                <p>Weapon-related assets.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>.DAT</h3>
-                <p>Game data files.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>.DDS</h3>
-                <p>Texture assets.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>.MDLX</h3>
-                <p>Model-related assets.</p>
-            </div>
-
-            <div class="list-card">
-                <h3>.MSET</h3>
-                <p>Motion and animation data.</p>
-            </div>
-
-        </div>
-
-    </section>
-
+	<!-- ========================================================
+		ASSETS
+		======================================================== -->
+	
+	<section id="assets" class="tab-content">
+	
+		<h2>
+			Assets
+		</h2>
+	
+		<p class="section-description">
+			Kingdom Hearts file formats, archive structures and
+			researched asset relationships used throughout KH1
+			and KH2.
+		</p>
+	
+		<div class="list-card">
+	
+			<!-- =================================================
+				BIN
+				================================================= -->
+	
+			<div class="asset-entry">
+	
+				<h3>.BIN</h3>
+	
+				<p>
+					Binary game data used to store structured,
+					packed or otherwise game-specific resources.
+					BIN files may contain multiple types of data
+					depending on the archive or system they belong to.
+				</p>
+	
+				<div class="asset-details">
+	
+					<div>
+						<strong>Format</strong>
+						<span>Binary Container / Data</span>
+					</div>
+	
+					<div>
+						<strong>Purpose</strong>
+						<span>
+							Stores game data and binary resources
+							used by Kingdom Hearts systems.
+						</span>
+					</div>
+	
+					<div>
+						<strong>Research Status</strong>
+						<span>
+							Structure varies by file and requires
+							format-specific inspection.
+						</span>
+					</div>
+	
+				</div>
+	
+			</div>
+	
+	
+			<!-- =================================================
+				HED
+				================================================= -->
+	
+			<div class="asset-entry">
+	
+				<h3>.HED</h3>
+	
+				<p>
+					Archive header data used to describe the contents
+					of associated package data. HED files can be used
+					to locate and identify resources stored within
+					corresponding package archives.
+				</p>
+	
+				<div class="asset-details">
+	
+					<div>
+						<strong>Format</strong>
+						<span>Archive Header</span>
+					</div>
+	
+					<div>
+						<strong>Purpose</strong>
+						<span>
+							Provides metadata and entry information
+							used when accessing archived resources.
+						</span>
+					</div>
+	
+					<div>
+						<strong>Related Files</strong>
+						<span>
+							Commonly associated with PKG data.
+						</span>
+					</div>
+	
+				</div>
+	
+			</div>
+	
+	
+			<!-- =================================================
+				PKG
+				================================================= -->
+	
+			<div class="asset-entry">
+	
+				<h3>.PKG</h3>
+	
+				<p>
+					Package data containing archived game resources.
+					PKG files work alongside archive metadata to
+					provide access to the underlying resources stored
+					within the game's data archives.
+				</p>
+	
+				<div class="asset-details">
+	
+					<div>
+						<strong>Format</strong>
+						<span>Package / Archive Data</span>
+					</div>
+	
+					<div>
+						<strong>Purpose</strong>
+						<span>
+							Stores packed game resources referenced
+							by archive information.
+						</span>
+					</div>
+	
+					<div>
+						<strong>Related Files</strong>
+						<span>
+							HED archive headers.
+						</span>
+					</div>
+	
+				</div>
+	
+			</div>
+	
+	
+			<!-- =================================================
+				WPN
+				================================================= -->
+	
+			<div class="asset-entry">
+	
+				<h3>.WPN</h3>
+	
+				<p>
+					Weapon-related resource files used by Kingdom
+					Hearts. WPN containers may contain weapon data,
+					models and embedded texture resources depending
+					on the specific asset.
+				</p>
+	
+				<div class="asset-details">
+	
+					<div>
+						<strong>Format</strong>
+						<span>Weapon Resource</span>
+					</div>
+	
+					<div>
+						<strong>Purpose</strong>
+						<span>
+							Stores resources associated with weapons
+							and weapon-related game objects.
+						</span>
+					</div>
+	
+					<div>
+						<strong>Known Contents</strong>
+						<span>
+							May contain embedded texture resources
+							such as DDS data.
+						</span>
+					</div>
+	
+				</div>
+	
+			</div>
+	
+	
+			<!-- =================================================
+				DAT
+				================================================= -->
+	
+			<div class="asset-entry">
+	
+				<h3>.DAT</h3>
+	
+				<p>
+					Extracted game data commonly encountered during
+					archive and container processing. DAT files can
+					represent resources that were originally stored
+					inside larger packed game data structures.
+				</p>
+	
+				<div class="asset-details">
+	
+					<div>
+						<strong>Format</strong>
+						<span>Game Data</span>
+					</div>
+	
+					<div>
+						<strong>Purpose</strong>
+						<span>
+							Stores extracted resources from packed
+							Kingdom Hearts game data.
+						</span>
+					</div>
+	
+					<div>
+						<strong>Extraction Sources</strong>
+						<span>
+							PKG, HED and related archive/container data.
+						</span>
+					</div>
+	
+				</div>
+	
+			</div>
+	
+	
+			<!-- =================================================
+				DDS
+				================================================= -->
+	
+			<div class="asset-entry">
+	
+				<h3>.DDS</h3>
+	
+				<p>
+					DirectDraw Surface texture data used for graphical
+					resources. DDS textures can be embedded within
+					several Kingdom Hearts asset formats and may be
+					extracted during asset analysis.
+				</p>
+	
+				<div class="asset-details">
+	
+					<div>
+						<strong>Format</strong>
+						<span>Texture</span>
+					</div>
+	
+					<div>
+						<strong>Purpose</strong>
+						<span>
+							Stores texture and graphical image data
+							used by game assets.
+						</span>
+					</div>
+	
+					<div>
+						<strong>Known Sources</strong>
+						<span>
+							TM2, CVBL, WPN, MDLS and MDLX resources.
+						</span>
+					</div>
+	
+				</div>
+	
+			</div>
+	
+	
+			<!-- =================================================
+				MDLX
+				================================================= -->
+	
+			<div class="asset-entry">
+	
+				<h3>.MDLX</h3>
+	
+				<p>
+					Kingdom Hearts 2 model-related resources used
+					for character, enemy, object and other 3D game
+					assets. MDLX files may contain model structures
+					and associated graphical resources.
+				</p>
+	
+				<div class="asset-details">
+	
+					<div>
+						<strong>Format</strong>
+						<span>3D Model Resource</span>
+					</div>
+	
+					<div>
+						<strong>Game</strong>
+						<span>Kingdom Hearts 2</span>
+					</div>
+	
+					<div>
+						<strong>Known Contents</strong>
+						<span>
+							Model data and potentially embedded
+							texture resources.
+						</span>
+					</div>
+	
+				</div>
+	
+			</div>
+	
+	
+			<!-- =================================================
+				MDLS
+				================================================= -->
+	
+			<div class="asset-entry">
+	
+				<h3>.MDLS</h3>
+	
+				<p>
+					Kingdom Hearts 1 model-related resources used
+					for characters, enemies, objects and other
+					three-dimensional game assets.
+				</p>
+	
+				<div class="asset-details">
+	
+					<div>
+						<strong>Format</strong>
+						<span>3D Model Resource</span>
+					</div>
+	
+					<div>
+						<strong>Game</strong>
+						<span>Kingdom Hearts 1</span>
+					</div>
+	
+					<div>
+						<strong>Known Contents</strong>
+						<span>
+							Model structures and associated graphical
+							resources.
+						</span>
+					</div>
+	
+				</div>
+	
+			</div>
+	
+	
+			<!-- =================================================
+				MSET
+				================================================= -->
+	
+			<div class="asset-entry">
+	
+				<h3>.MSET</h3>
+	
+				<p>
+					Motion and animation resources associated with
+					characters, enemies and other animated game
+					objects. MSET data is used alongside model
+					resources to provide animation behavior.
+				</p>
+	
+				<div class="asset-details">
+	
+					<div>
+						<strong>Format</strong>
+						<span>Motion / Animation Resource</span>
+					</div>
+	
+					<div>
+						<strong>Purpose</strong>
+						<span>
+							Stores animation and motion data used
+							by game entities.
+						</span>
+					</div>
+	
+					<div>
+						<strong>Related Resources</strong>
+						<span>
+							Character models, MDLS and MDLX assets.
+						</span>
+					</div>
+	
+				</div>
+	
+			</div>
+	
+		</div>
+	
+	</section>
 
     <!-- ========================================================
          VARIABLES
