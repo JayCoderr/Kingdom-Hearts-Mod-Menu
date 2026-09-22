@@ -6899,27 +6899,55 @@ ID LIST
     // ============================================================
 
     const backgroundPlaylist = [
-		"https://files.catbox.moe/k2djd0.mp3",
+        "https://files.catbox.moe/k2djd0.mp3",
         "https://files.catbox.moe/rponzj.mp3",
-		"https://files.catbox.moe/qz5q7a.mp3",
+        "https://files.catbox.moe/qz5q7a.mp3",
+        "https://files.catbox.moe/5a1v3c.mp3",
+        "https://files.catbox.moe/nri1pv.mp3"
 
         // Add more MP3s here:
-        // "https://files.catbox.moe/rponzj.mp3",
-        // "https://files.catbox.moe/song3.mp3",
-        // "https://files.catbox.moe/song4.mp3"
+        // "https://files.catbox.moe/song4.mp3",
+        // "https://files.catbox.moe/song5.mp3"
     ];
+
 
     const backgroundAudio =
         document.getElementById("kh-background-audio");
 
-    let currentTrack = 0;
+
+    let currentTrack = -1;
 
 
     // ============================================================
-    // LOAD TRACK
+    // GET RANDOM TRACK
     // ============================================================
 
-    function loadBackgroundTrack(index) {
+    function getRandomTrack() {
+
+        let randomTrack;
+
+        do {
+
+            randomTrack =
+                Math.floor(
+                    Math.random() *
+                    backgroundPlaylist.length
+                );
+
+        } while (
+            backgroundPlaylist.length > 1 &&
+            randomTrack === currentTrack
+        );
+
+        return randomTrack;
+    }
+
+
+    // ============================================================
+    // PLAY TRACK
+    // ============================================================
+
+    function playTrack(index) {
 
         currentTrack = index;
 
@@ -6927,25 +6955,24 @@ ID LIST
             backgroundPlaylist[currentTrack];
 
         backgroundAudio.load();
+
+        backgroundAudio.play().catch(() => {
+            // Browser blocked autoplay.
+            // User interaction will start playback.
+        });
     }
 
 
     // ============================================================
-    // PLAY NEXT TRACK
+    // PLAY RANDOM TRACK
     // ============================================================
 
-    function playNextBackgroundTrack() {
+    function playRandomTrack() {
 
-        currentTrack++;
+        const randomTrack =
+            getRandomTrack();
 
-        if (currentTrack >= backgroundPlaylist.length) {
-            currentTrack = 0;
-        }
-
-        backgroundAudio.src =
-            backgroundPlaylist[currentTrack];
-
-        backgroundAudio.play().catch(() => {});
+        playTrack(randomTrack);
     }
 
 
@@ -6955,7 +6982,7 @@ ID LIST
 
     backgroundAudio.addEventListener(
         "ended",
-        playNextBackgroundTrack
+        playRandomTrack
     );
 
 
@@ -6970,17 +6997,24 @@ ID LIST
 
         backgroundAudio.volume = 0.5;
 
-        loadBackgroundTrack(currentTrack);
 
-        backgroundAudio.play().catch(() => {
-            // Browser blocked autoplay.
-            // First user interaction will start it.
-        });
+        // ========================================================
+        // RANDOM FIRST SONG
+        // ========================================================
+
+        const randomStartingTrack =
+            Math.floor(
+                Math.random() *
+                backgroundPlaylist.length
+            );
+
+
+        playTrack(randomStartingTrack);
     }
 
 
     // ============================================================
-    // FALLBACK FOR BROWSER AUTOPLAY BLOCKING
+    // AUTOPLAY FALLBACK
     // ============================================================
 
     function enableBackgroundAudio() {
@@ -6988,6 +7022,7 @@ ID LIST
         backgroundAudio.volume = 0.5;
 
         backgroundAudio.play().catch(() => {});
+
 
         document.removeEventListener(
             "click",
@@ -7003,6 +7038,7 @@ ID LIST
             "touchstart",
             enableBackgroundAudio
         );
+
     }
 
 
