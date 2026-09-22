@@ -1366,12 +1366,7 @@ ID LIST
      INVISIBLE BACKGROUND AUDIO
      ============================================================ -->
 
-<audio
-    id="kh-background-audio"
-    src="https://files.catbox.moe/305ifa.mp3"
-    loop
-    preload="auto">
-</audio>
+<audio id="kh-background-audio" preload="auto"> </audio>
 
 
 <div class="video-overlay"></div>
@@ -6899,33 +6894,94 @@ ID LIST
 </script>
 <script>
 
+    // ============================================================
+    // BACKGROUND MUSIC PLAYLIST
+    // ============================================================
+
+    const backgroundPlaylist = [
+		"https://files.catbox.moe/k2djd0.mp3",
+        "https://files.catbox.moe/rponzj.mp3",
+		"https://files.catbox.moe/qz5q7a.mp3",
+
+        // Add more MP3s here:
+        // "https://files.catbox.moe/rponzj.mp3",
+        // "https://files.catbox.moe/song3.mp3",
+        // "https://files.catbox.moe/song4.mp3"
+    ];
+
     const backgroundAudio =
         document.getElementById("kh-background-audio");
 
+    let currentTrack = 0;
 
-    // ------------------------------------------------------------
-    // START AUDIO
-    // ------------------------------------------------------------
 
-    function startBackgroundAudio() {
+    // ============================================================
+    // LOAD TRACK
+    // ============================================================
 
-        backgroundAudio.volume = 0.5;
+    function loadBackgroundTrack(index) {
 
-        backgroundAudio.play().catch(() => {
-            // Browser blocked autoplay.
-            // It will be started by the first user interaction.
-        });
+        currentTrack = index;
 
+        backgroundAudio.src =
+            backgroundPlaylist[currentTrack];
+
+        backgroundAudio.load();
     }
 
 
-    // Try immediately.
-    startBackgroundAudio();
+    // ============================================================
+    // PLAY NEXT TRACK
+    // ============================================================
+
+    function playNextBackgroundTrack() {
+
+        currentTrack++;
+
+        if (currentTrack >= backgroundPlaylist.length) {
+            currentTrack = 0;
+        }
+
+        backgroundAudio.src =
+            backgroundPlaylist[currentTrack];
+
+        backgroundAudio.play().catch(() => {});
+    }
 
 
-    // ------------------------------------------------------------
+    // ============================================================
+    // WHEN TRACK FINISHES
+    // ============================================================
+
+    backgroundAudio.addEventListener(
+        "ended",
+        playNextBackgroundTrack
+    );
+
+
+    // ============================================================
+    // START AUDIO
+    // ============================================================
+
+    function startBackgroundAudio() {
+
+        if (backgroundPlaylist.length === 0)
+            return;
+
+        backgroundAudio.volume = 0.5;
+
+        loadBackgroundTrack(currentTrack);
+
+        backgroundAudio.play().catch(() => {
+            // Browser blocked autoplay.
+            // First user interaction will start it.
+        });
+    }
+
+
+    // ============================================================
     // FALLBACK FOR BROWSER AUTOPLAY BLOCKING
-    // ------------------------------------------------------------
+    // ============================================================
 
     function enableBackgroundAudio() {
 
@@ -6947,9 +7003,12 @@ ID LIST
             "touchstart",
             enableBackgroundAudio
         );
-
     }
 
+
+    // ============================================================
+    // USER INTERACTION
+    // ============================================================
 
     document.addEventListener(
         "click",
@@ -6965,6 +7024,13 @@ ID LIST
         "touchstart",
         enableBackgroundAudio
     );
+
+
+    // ============================================================
+    // START
+    // ============================================================
+
+    startBackgroundAudio();
 
 </script>
 </body>
