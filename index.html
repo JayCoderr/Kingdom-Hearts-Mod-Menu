@@ -1218,7 +1218,127 @@ ID LIST
     }
 
 }
+/* ============================================================
+   WORLDS
+   ============================================================ */
 
+.world-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.world-card {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+
+    background: #000000;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.world-card:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(255, 255, 255, 0.25);
+
+    background: #000000;
+}
+
+
+/* ============================================================
+   WORLD PROFILE
+   ============================================================ */
+
+.world-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* ============================================================
+   CIRCULAR WORLD IMAGE
+   ============================================================ */
+
+.world-image {
+    width: 90px;
+    height: 90px;
+
+    min-width: 90px;
+    min-height: 90px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 2px solid rgba(255, 255, 255, 0.15);
+
+    background: #000000;
+}
+
+.world-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* ============================================================
+   WORLD INFORMATION
+   ============================================================ */
+
+.world-info {
+    flex: 1;
+}
+
+.world-info h3 {
+    margin: 0 0 6px 0;
+}
+
+.world-info p {
+    margin: 0;
+    opacity: 0.7;
+}
+
+
+/* ============================================================
+   WORLD DATA
+   ============================================================ */
+
+.world-data {
+    margin-top: 18px;
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.world-data > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.world-data strong {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.world-data span {
+    word-break: break-word;
+    font-family: monospace;
+}
 </style>
 
 </head>
@@ -5883,14 +6003,14 @@ ID LIST
 		</p>
 	
 		<div class="world-list">
-	
+
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="DESTINY_ISLANDS_IMAGE_URL_HERE" alt="Destiny Islands">
+						<img src="https://iili.io/nTZFFLP.png" alt="Destiny Islands">
 					</div>
 					<div class="world-info">
-						<h3>Destiny Islands</h3>
+						<h3>Drive To The Heart</h3>
 						<p>Starting world.</p>
 					</div>
 				</div>
@@ -5905,11 +6025,29 @@ ID LIST
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="TRAVERSE_TOWN_IMAGE_URL_HERE" alt="Traverse Town">
+						<img src="https://iili.io/nTZFFLP.png" alt="Destiny Islands">
+					</div>
+					<div class="world-info">
+						<h3>Destiny Islands</h3>
+						<p>Where Sora meets Kairi and all his other friends</p>
+					</div>
+				</div>
+				<div class="world-data">
+					<div>
+						<strong>Weapon IDs</strong>
+						<span>DESTINY_ISLANDS_WEAPON_IDS_HERE</span>
+					</div>
+				</div>
+			</div>
+	
+			<div class="world-card">
+				<div class="world-profile">
+					<div class="world-image">
+						<img src="https://iili.io/nTZFFLP.png" alt="Traverse Town">
 					</div>
 					<div class="world-info">
 						<h3>Traverse Town</h3>
-						<p>Central hub world.</p>
+						<p>Central hub world and Where Sora meets Goofy and Donald</p>
 					</div>
 				</div>
 				<div class="world-data">
@@ -5923,7 +6061,7 @@ ID LIST
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="WONDERLAND_IMAGE_URL_HERE" alt="Wonderland">
+						<img src="https://iili.io/nTZFFLP.png" alt="Wonderland">
 					</div>
 					<div class="world-info">
 						<h3>Wonderland</h3>
@@ -5941,7 +6079,7 @@ ID LIST
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="OLYMPUS_COLISEUM_IMAGE_URL_HERE" alt="Olympus Coliseum">
+						<img src="https://iili.io/nTZFFLP.png" alt="Olympus Coliseum">
 					</div>
 					<div class="world-info">
 						<h3>Olympus Coliseum</h3>
@@ -5959,7 +6097,7 @@ ID LIST
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="DEEP_JUNGLE_IMAGE_URL_HERE" alt="Deep Jungle">
+						<img src="https://iili.io/nTZFFLP.png" alt="Deep Jungle">
 					</div>
 					<div class="world-info">
 						<h3>Deep Jungle</h3>
@@ -5977,7 +6115,7 @@ ID LIST
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="AGRABAH_IMAGE_URL_HERE" alt="Agrabah">
+						<img src="https://iili.io/nTZFFLP.png" alt="Agrabah">
 					</div>
 					<div class="world-info">
 						<h3>Agrabah</h3>
@@ -5995,7 +6133,7 @@ ID LIST
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="MONSTRO_IMAGE_URL_HERE" alt="Monstro">
+						<img src="https://iili.io/nTZFFLP.png" alt="Monstro">
 					</div>
 					<div class="world-info">
 						<h3>Monstro</h3>
@@ -6013,7 +6151,7 @@ ID LIST
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="ATLANTICA_IMAGE_URL_HERE" alt="Atlantica">
+						<img src="https://iili.io/nTZFFLP.png" alt="Atlantica">
 					</div>
 					<div class="world-info">
 						<h3>Atlantica</h3>
@@ -6031,7 +6169,7 @@ ID LIST
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="HALLOWEEN_TOWN_IMAGE_URL_HERE" alt="Halloween Town">
+						<img src="https://iili.io/nTZFFLP.png" alt="Halloween Town">
 					</div>
 					<div class="world-info">
 						<h3>Halloween Town</h3>
@@ -6049,7 +6187,7 @@ ID LIST
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="NEVERLAND_IMAGE_URL_HERE" alt="Neverland">
+						<img src="https://iili.io/nTZFFLP.png" alt="Neverland">
 					</div>
 					<div class="world-info">
 						<h3>Neverland</h3>
@@ -6067,7 +6205,7 @@ ID LIST
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="HOLLOW_BASTION_IMAGE_URL_HERE" alt="Hollow Bastion">
+						<img src="https://iili.io/nTZFFLP.png" alt="Hollow Bastion">
 					</div>
 					<div class="world-info">
 						<h3>Hollow Bastion</h3>
@@ -6085,7 +6223,7 @@ ID LIST
 			<div class="world-card">
 				<div class="world-profile">
 					<div class="world-image">
-						<img src="END_OF_THE_WORLD_IMAGE_URL_HERE" alt="End of the World">
+						<img src="https://iili.io/nTZFFLP.png" alt="End of the World">
 					</div>
 					<div class="world-info">
 						<h3>End of the World</h3>
